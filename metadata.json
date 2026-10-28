@@ -1,0 +1,6 @@
+{
+  "name": "Pribadi Bilingual School Portal & WordPress Importer",
+  "description": "Official school web portal for Pribadi Premiere School & Sekolah Pribadi Depok (TK, SD, SMP, SMA) featuring academic continuum, Cambridge ID248, PPDB 2026/2027, Olympiad achievements, and campus life.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
