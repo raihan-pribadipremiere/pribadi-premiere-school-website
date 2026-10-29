@@ -30,8 +30,8 @@ export const NewsPage: React.FC<NewsPageProps> = ({
             </h1>
             <p className="text-stone-300 text-base sm:text-lg leading-relaxed">
               {currentLang === 'en'
-                ? 'Stay informed with bulletins from our Grand Depok City and Margonda campuses, exam timetables, Open House schedules, and competition honors.'
-                : 'Ikuti perkembangan kegiatan sekolah, jadwal ujian Cambridge, pameran sains, dan pengumuman resmi penerimaan siswa baru.'}
+                ? 'Stay informed with bulletins from our Grand Depok City campus, Cambridge exam timetables, Open House schedules, and student competition honors.'
+                : 'Ikuti perkembangan kegiatan sekolah di Grand Depok City, jadwal ujian Cambridge, pameran sains, dan pengumuman resmi penerimaan siswa baru.'}
             </p>
           </div>
         </div>

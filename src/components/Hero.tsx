@@ -26,11 +26,11 @@ export const Hero: React.FC<HeroProps> = ({
             
             {/* Editorial kicker */}
             <div className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wider uppercase text-amber-900">
-              <span>Sekolah Pribadi Depok</span>
+              <span>Pribadi Premiere School</span>
               <span aria-hidden="true">·</span>
               <span>Cambridge International ID248</span>
               <span aria-hidden="true">·</span>
-              <span>Bilingual Boarding & Day School</span>
+              <span>Grand Depok City · Boarding & Day School</span>
             </div>
 
             {/* Display Headline */}
@@ -76,7 +76,7 @@ export const Hero: React.FC<HeroProps> = ({
                 className="inline-flex items-center gap-2 px-4 py-3.5 text-xs sm:text-sm font-semibold text-stone-700 hover:text-stone-950 bg-stone-200/70 hover:bg-stone-200 rounded-xl transition-colors"
               >
                 <Building2 className="w-4 h-4 text-amber-800" />
-                <span>{currentLang === 'en' ? 'Explore Campuses' : 'Pilihan Kampus'}</span>
+                <span>{currentLang === 'en' ? 'Explore Campus' : 'Fasilitas Kampus'}</span>
               </a>
             </div>
 

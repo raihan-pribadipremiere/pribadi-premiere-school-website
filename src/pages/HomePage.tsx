@@ -127,17 +127,17 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* Dual Campus Overview Section */}
+      {/* Flagship GDC Campus Overview Section */}
       <section className="py-16 bg-stone-100 border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
             <div>
               <span className="text-xs font-semibold uppercase tracking-wider text-amber-900 block mb-2">
-                {currentLang === 'en' ? 'Explore Our Campuses' : 'Dua Kampus Pilihan'}
+                {currentLang === 'en' ? 'Flagship Campus Grounds' : 'Kampus Grand Depok City'}
               </span>
               <h2 className="font-serif text-3xl sm:text-4xl text-stone-900 font-normal tracking-tight">
-                {currentLang === 'en' ? 'Grand Depok City & Margonda Raya' : 'Kampus Grand Depok City & Margonda Raya'}
+                {currentLang === 'en' ? 'Pribadi Premiere Campus & Boarding Residence' : 'Kampus Modern & Asrama Terpadu Grand Depok City'}
               </h2>
             </div>
             <button
@@ -234,17 +234,22 @@ export const HomePage: React.FC<HomePageProps> = ({
 
                 <div className="pt-4 border-t border-stone-200/60 mt-4 flex items-center justify-between">
                   <button
-                    onClick={() => onNavigate('academics')}
-                    className="text-xs font-semibold text-amber-900 hover:text-amber-950 inline-flex items-center gap-1"
+                    onClick={() => {
+                      if (prog.id === 'kindergarten') onNavigate('academics/kindergarten');
+                      else if (prog.id === 'primary') onNavigate('academics/primary');
+                      else if (prog.id === 'junior-high') onNavigate('academics/junior-high');
+                      else onNavigate('academics/senior-high');
+                    }}
+                    className="text-xs font-semibold text-amber-900 hover:text-amber-950 inline-flex items-center gap-1 cursor-pointer"
                   >
                     <span>{currentLang === 'en' ? 'View Curriculum' : 'Detail Kurikulum'}</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                   <button
-                    onClick={() => onOpenAdmissions(prog.id)}
-                    className="text-[11px] font-semibold text-stone-600 hover:text-stone-900"
+                    onClick={() => onNavigate('admissions/calculator')}
+                    className="text-[11px] font-semibold text-stone-600 hover:text-stone-900 cursor-pointer"
                   >
-                    {currentLang === 'en' ? 'Estimate Fees' : 'Biaya'}
+                    {currentLang === 'en' ? 'Fee Simulator' : 'Simulasi Biaya'}
                   </button>
                 </div>
               </div>

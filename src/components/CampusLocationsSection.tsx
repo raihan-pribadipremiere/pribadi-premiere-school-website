@@ -22,17 +22,17 @@ export const CampusLocationsSection: React.FC<CampusLocationsSectionProps> = ({
         {/* Section Header */}
         <div className="max-w-3xl mb-10">
           <div className="text-xs font-semibold uppercase tracking-wider text-amber-900 mb-2">
-            {currentLang === 'en' ? 'Our Campuses in Depok' : 'Pilihan Kampus di Kota Depok'}
+            {currentLang === 'en' ? 'Pribadi Premiere School Complex' : 'Kompleks Kampus Pribadi Premiere'}
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl text-stone-900 font-normal tracking-tight">
             {currentLang === 'en'
-              ? 'Two premier learning environments tailored for future leaders.'
-              : 'Dua lingkungan pendidikan unggulan yang disiapkan untuk melahirkan generasi pemimpin.'}
+              ? 'A 4,000 m² purpose-built campus in Grand Depok City.'
+              : 'Kampus modern terpadu 4.000 m² di Grand Depok City.'}
           </h2>
           <p className="mt-3 text-stone-600 text-sm sm:text-base leading-relaxed">
             {currentLang === 'en'
-              ? 'Discover our next-generation digital campus at Grand Depok City (GDC) and our renowned heritage boarding campus on Margonda Raya.'
-              : 'Pilih antara kampus inovasi digital mutakhir di Grand Depok City (GDC) atau kampus bersejarah dengan asrama lengkap di Margonda Raya.'}
+              ? 'Explore our next-generation academic complex with 1:1 Chromebook digital classrooms, AI & robotics studios, and our dedicated 24-hour student boarding residence.'
+              : 'Jelajahi kompleks akademik modern dengan ruang kelas digital 1:1 Chromebook, laboratorium sains & robotika, serta asrama siswa terpadu 24 jam.'}
           </p>
         </div>
 

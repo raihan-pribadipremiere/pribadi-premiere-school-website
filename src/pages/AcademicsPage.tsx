@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Language } from '../types';
-import { academicPrograms } from '../data/schoolData';
 import { 
   Laptop, 
   BookOpen, 
-  Compass, 
   GraduationCap, 
-  Check, 
   Sparkles, 
-  HeartHandshake, 
-  Award, 
   ArrowRight,
   Layers,
   BrainCircuit,
-  Search
+  Smile,
+  ShieldCheck,
+  CheckCircle2
 } from 'lucide-react';
 
 interface AcademicsPageProps {
@@ -27,285 +24,256 @@ export const AcademicsPage: React.FC<AcademicsPageProps> = ({
   onNavigate,
   onOpenAdmissions
 }) => {
-  const [activeLevelId, setActiveLevelId] = useState<string>('primary');
-  const activeProg = academicPrograms.find(p => p.id === activeLevelId) || academicPrograms[1];
-
-  const getIcon = (iconName: string) => {
-    switch (iconName) {
-      case 'BookOpen':
-        return <BookOpen className="w-5 h-5" />;
-      case 'Compass':
-        return <Compass className="w-5 h-5" />;
-      default:
-        return <GraduationCap className="w-5 h-5" />;
+  const academicGatewayCards = [
+    {
+      id: 'kindergarten',
+      page: 'academics/kindergarten',
+      badge: currentLang === 'en' ? 'Ages 2 – 6 · Play-Based' : 'Usia 2 – 6 Thn · Sentra Bermain',
+      title: currentLang === 'en' ? 'Preschool & Kindergarten (TK)' : 'PAUD & TK Pribadi Premiere',
+      subtitle: currentLang === 'en' ? 'Toddler, Playgroup, TK A & TK B' : 'Toddler, Playgroup, TK A & TK B',
+      desc: currentLang === 'en'
+        ? 'Play-based bilingual learning with multisensory Jolly Phonics, concrete numeracy, adab habituation, and dedicated early years playground.'
+        : 'Stimulasi tumbuh kembang anak berbasis bermain, pengenalan fonik dwibahasa alami, pembiasaan adab harian, dan pematangan motorik.',
+      highlights: [
+        currentLang === 'en' ? 'Jolly Phonics & Daily English' : 'Jolly Phonics & Bilingual Harian',
+        currentLang === 'en' ? 'Sensory & Sand Exploration' : 'Eksplorasi Sensori & Pasir Kinetik',
+        currentLang === 'en' ? 'Adab & Islamic Habituation' : 'Pembiasaan Adab & Doa Harian'
+      ],
+      cta: currentLang === 'en' ? 'Explore Kindergarten Program →' : 'Lihat Program TK & PAUD →',
+      icon: Smile,
+      color: 'bg-amber-500/10 text-amber-900 border-amber-200'
+    },
+    {
+      id: 'primary',
+      page: 'academics/primary',
+      badge: currentLang === 'en' ? 'Grades 1 – 6 · Dual Curricula' : 'Kelas 1 – 6 · Kurikulum Ganda',
+      title: currentLang === 'en' ? 'Primary School (SD Pribadi Premiere)' : 'SD Pribadi Premiere',
+      subtitle: 'Cambridge Primary + Kurikulum Merdeka',
+      desc: currentLang === 'en'
+        ? 'Solidifying analytical logic and moral character through Cambridge Primary English, Math & Science alongside national project-based learning.'
+        : 'Membangun dasar kecerdasan analitis dan karakter berakhlak mulia melalui Cambridge Primary (Math, Science, English) dan Kurikulum Merdeka.',
+      highlights: [
+        currentLang === 'en' ? 'Cambridge Primary Checkpoint' : 'Ujian Cambridge Primary Checkpoint',
+        currentLang === 'en' ? 'Hands-on Science Labs' : 'Praktikum Sains di Laboratorium',
+        currentLang === 'en' ? 'Tahfidz & Character Routines' : 'Bimbingan Tahfidz & Budi Pekerti'
+      ],
+      cta: currentLang === 'en' ? 'Explore Primary (SD) Program →' : 'Lihat Program SD Premiere →',
+      icon: BookOpen,
+      color: 'bg-blue-500/10 text-blue-900 border-blue-200'
+    },
+    {
+      id: 'junior-high',
+      page: 'academics/junior-high',
+      badge: currentLang === 'en' ? 'Grades 7 – 9 · Cambridge Lower' : 'Kelas 7 – 9 · Cambridge Lower Sec.',
+      title: currentLang === 'en' ? 'Junior High School (SMP Premiere)' : 'SMP Pribadi Premiere',
+      subtitle: 'Cambridge Lower Secondary & STEM Research',
+      desc: currentLang === 'en'
+        ? 'Navigating early adolescence with academic rigor, early research papers, science Olympiad clinics, and optional 24h student boarding.'
+        : 'Mengembangkan daya nalar remaja melalui riset sains, persiapan Cambridge Checkpoint, pembinaan intensif olimpiade (OSN), serta opsi asrama 24 jam.',
+      highlights: [
+        currentLang === 'en' ? 'Cambridge Lower Sec. Checkpoint' : 'Cambridge Lower Sec. Checkpoint',
+        currentLang === 'en' ? 'Python & STEM Coding Studio' : 'Koding Python & Studio Robotika',
+        currentLang === 'en' ? '24h Boarding Residence Option' : 'Pilihan Program Asrama 24 Jam'
+      ],
+      cta: currentLang === 'en' ? 'Explore Junior High (SMP) →' : 'Lihat Program SMP Premiere →',
+      icon: Layers,
+      color: 'bg-emerald-500/10 text-emerald-900 border-emerald-200'
+    },
+    {
+      id: 'senior-high',
+      page: 'academics/senior-high',
+      badge: currentLang === 'en' ? 'Grades 10 – 12 · A-Levels & PTN' : 'Kelas 10 – 12 · Cambridge & PTN',
+      title: currentLang === 'en' ? 'Senior High School (SMA Premiere)' : 'SMA Pribadi Premiere',
+      subtitle: 'Cambridge IGCSE, A-Levels & PTN Pathway',
+      desc: currentLang === 'en'
+        ? 'Direct gateway to top Indonesian public universities (UI, ITB, UGM) and global institutions via Cambridge A-Levels and intensive SNBT coaching.'
+        : 'Gerbang menuju perguruan tinggi terbaik dunia dan PTN favorit melalui kurikulum Cambridge A-Levels dan klinik bimbingan intensif SNBT.',
+      highlights: [
+        currentLang === 'en' ? '100% University Acceptance' : '100% Kelulusan ke PTN & Kampus Global',
+        currentLang === 'en' ? 'Cambridge AS & A-Levels ID248' : 'Pusat Ujian Cambridge Resmi ID248',
+        currentLang === 'en' ? 'Individual College Counseling' : 'Konseling Masuk Kuliah 1-on-1'
+      ],
+      cta: currentLang === 'en' ? 'Explore Senior High (SMA) →' : 'Lihat Program SMA Premiere →',
+      icon: GraduationCap,
+      color: 'bg-purple-500/10 text-purple-900 border-purple-200'
+    },
+    {
+      id: 'chromebook',
+      page: 'academics/chromebook',
+      badge: currentLang === 'en' ? '1:1 Edutech Ecosystem' : 'Ekosistem Digital 1:1',
+      title: currentLang === 'en' ? '1:1 Managed Chromebook Classroom' : 'Kelas Digital 1:1 Chromebook',
+      subtitle: 'Google Workspace for Education & Cambridge E-Books',
+      desc: currentLang === 'en'
+        ? 'Individual school-managed Chromebooks replacing heavy paper books with interactive learning, cloud collaboration, and child-safe firewalls.'
+        : 'Setiap siswa dibekali Chromebook terkelola institusional untuk menggantikan buku berat menjadi modul interaktif, riset awan, dan internet aman.',
+      highlights: [
+        currentLang === 'en' ? 'Child-Safe Content Filtering' : 'Sistem Filter Internet & Anti Distraksi',
+        currentLang === 'en' ? 'Google Classroom Real-Time' : 'Pengumpulan Tugas & Feedback Instan',
+        currentLang === 'en' ? 'Lightweight Backpacks' : 'Tas Sekolah Lebih Ringan & Sehat'
+      ],
+      cta: currentLang === 'en' ? 'Explore Digital Classroom →' : 'Pelajari Kelas Digital →',
+      icon: Laptop,
+      color: 'bg-amber-500/10 text-amber-900 border-amber-200'
+    },
+    {
+      id: 'gtky',
+      page: 'academics/gtky',
+      badge: currentLang === 'en' ? 'Personalized Profiling' : 'Pemetaan Minat Bakat',
+      title: currentLang === 'en' ? 'GTKY Talent Assessment & Mentoring' : 'Asesmen Bakat GTKY & Konseling',
+      subtitle: 'Getting to Know You · Tailored Education',
+      desc: currentLang === 'en'
+        ? 'Diagnostic cognitive assessment identifying each child’s innate learning style, emotional intelligence, and career trajectory.'
+        : 'Pemetaan psikologis dan gaya belajar personal untuk memastikan setiap siswa dibimbing sesuai potensi terbesarnya.',
+      highlights: [
+        currentLang === 'en' ? 'Diagnostic Cognitive Profiling' : 'Tes Psikologi & Gaya Belajar',
+        currentLang === 'en' ? 'Individual Growth Plan (IGP)' : 'Rencana Tumbuh Kembang Pribadi',
+        currentLang === 'en' ? 'Bi-Weekly Mentorship Check-Ins' : 'Bimbingan Konseling Rutin 1-on-1'
+      ],
+      cta: currentLang === 'en' ? 'Explore GTKY Profiling →' : 'Pelajari Asesmen GTKY →',
+      icon: BrainCircuit,
+      color: 'bg-rose-500/10 text-rose-900 border-rose-200'
     }
-  };
+  ];
 
   return (
     <div className="bg-stone-50 min-h-screen">
       
-      {/* Page Header */}
+      {/* Gateway Hero */}
       <section className="bg-stone-900 text-white py-16 sm:py-20 border-b border-stone-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-amber-400">
-              {currentLang === 'en' ? 'Academics & Curricula' : 'Kurikulum & Program Akademik'}
+              {currentLang === 'en' ? 'Academic Continuum · Overview Hub' : 'Jenjang & Kurikulum · Ikhtisar Akademik'}
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-white leading-tight">
               {currentLang === 'en'
-                ? 'Dual Cambridge & National curricula with next-gen digital mastery.'
-                : 'Perpaduan Kurikulum Cambridge & Nasional dengan ruang kelas digital mutakhir.'}
+                ? 'From Early Childhood to University Entrance.'
+                : 'Pendidikan Berkesinambungan: Dari Usia Dini Hingga Kampus Impian.'}
             </h1>
             <p className="text-stone-300 text-base sm:text-lg leading-relaxed">
               {currentLang === 'en'
-                ? 'From early childhood discovery to Cambridge IGCSE and A-Levels, we cultivate inquisitive, bilingual problem solvers empowered by 1-to-1 Chromebook learning and dedicated mentorship.'
-                : 'Dari masa usia dini hingga sertifikasi Cambridge IGCSE dan A-Level, kami membina pemikir analitis dwibahasa melalui pembelajaran digital 1:1 Chromebook dan pendampingan personal.'}
+                ? 'Explore our comprehensive academic journey below. Select any stage to review its full curriculum, daily schedule, and dedicated facilities.'
+                : 'Pribadi Premiere School menyediakan kesinambungan kurikulum terpadu mulai dari TK, SD, SMP, hingga SMA di Grand Depok City. Pilih topik di bawah untuk membaca rincian lengkap.'}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Flagship Innovation 1: Digital Classroom (Chromebook 1:1) */}
-      <section className="py-16 bg-white border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="p-8 sm:p-12 rounded-2xl bg-amber-50/70 border border-amber-200/80">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-              
-              <div className="lg:col-span-8 space-y-4">
-                <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-900">
-                  <Laptop className="w-4 h-4 text-amber-800" />
-                  <span>{currentLang === 'en' ? 'Flagship Edutech Program' : 'Program Unggulan Edutech'}</span>
-                </div>
-                
-                <h2 className="font-serif text-2xl sm:text-3xl text-stone-900 font-normal">
-                  {currentLang === 'en'
-                    ? '1-to-1 Digital Classroom: Learning Beyond Heavy Textbooks'
-                    : 'Kelas Digital 1:1: Belajar Lebih Cerdas Tanpa Beban Buku Tebal'}
-                </h2>
-
-                <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
-                  {currentLang === 'en'
-                    ? 'At Pribadi Premiere, every student is integrated into a modern digital learning ecosystem utilizing Google for Education Chromebooks. Physical textbooks are seamlessly replaced with interactive simulations, digital laboratory notebooks, and real-time collaborative whiteboards.'
-                    : 'Di Pribadi Premiere School, setiap siswa difasilitasi dengan ekosistem belajar digital menggunakan Chromebook. Buku paket konvensional digantikan dengan modul interaktif, simulasi sains virtual, tugas kolaboratif real-time, dan akses materi tanpa batas.'}
-                </p>
-
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-stone-800 font-medium">
-                  <div className="flex items-center gap-2 bg-white/80 p-3 rounded-lg border border-amber-200/60">
-                    <Check className="w-4 h-4 text-emerald-700 shrink-0" />
-                    <span>Chromebook 1-to-1 Integration</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/80 p-3 rounded-lg border border-amber-200/60">
-                    <Check className="w-4 h-4 text-emerald-700 shrink-0" />
-                    <span>Google for Education Security</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-white/80 p-3 rounded-lg border border-amber-200/60">
-                    <Check className="w-4 h-4 text-emerald-700 shrink-0" />
-                    <span>Real-time Formative Analytics</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="lg:col-span-4 bg-white p-6 rounded-xl border border-stone-200 space-y-3">
-                <h4 className="font-bold text-xs uppercase tracking-wider text-stone-900">
-                  {currentLang === 'en' ? 'Key Educational Benefits:' : 'Manfaat Kelas Digital:'}
-                </h4>
-                <ul className="space-y-2 text-xs text-stone-600">
-                  <li className="flex items-start gap-2">
-                    <span className="text-amber-800 font-bold">•</span>
-                    <span>Ergonomic lightness: No more carrying heavy backpacks filled with encyclopedic textbooks.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-amber-800 font-bold">•</span>
-                    <span>Self-paced mastery: Rewatch laboratory tutorials and revisit lecture annotations anytime.</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <span className="text-amber-800 font-bold">•</span>
-                    <span>Parent visibility: Transparent weekly assignment portals and teacher notes.</span>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
+      {/* Continuity Flow Banner */}
+      <section className="bg-amber-950 text-amber-200 py-6 px-4 border-b border-amber-900">
+        <div className="max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4 text-xs font-medium">
+          <div className="flex items-center gap-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+            <span className="font-bold text-white uppercase tracking-wider">
+              {currentLang === 'en' ? 'The Complete Pribadi Continuum:' : 'Kesinambungan Pendidikan:'}
+            </span>
+          </div>
+          <div className="flex items-center gap-2 sm:gap-4 overflow-x-auto text-xs text-amber-100 font-mono">
+            <button onClick={() => onNavigate('academics/kindergarten')} className="hover:text-white cursor-pointer underline">TK (Ages 2–6)</button>
+            <span>→</span>
+            <button onClick={() => onNavigate('academics/primary')} className="hover:text-white cursor-pointer underline">SD (Grades 1–6)</button>
+            <span>→</span>
+            <button onClick={() => onNavigate('academics/junior-high')} className="hover:text-white cursor-pointer underline">SMP (Grades 7–9)</button>
+            <span>→</span>
+            <button onClick={() => onNavigate('academics/senior-high')} className="hover:text-white cursor-pointer underline">SMA (Grades 10–12)</button>
+            <span>→</span>
+            <span className="text-amber-400 font-bold">Top Global Universities & PTN</span>
           </div>
         </div>
       </section>
 
-      {/* Flagship Innovation 2: Character Building & Counseling (GTKY & Mentoring) */}
-      <section className="py-16 bg-stone-100 border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mb-10">
-            <span className="text-xs font-semibold uppercase tracking-wider text-amber-900 block mb-2">
-              {currentLang === 'en' ? 'Personalized Student Development' : 'Bimbingan Karakter & Konseling Pribadi'}
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-stone-900 font-normal">
-              {currentLang === 'en'
-                ? 'Getting to Know You (GTKY) & One-on-One Mentoring'
-                : 'Program GTKY & Pendampingan One-on-One'}
-            </h2>
-            <p className="mt-2 text-stone-600 text-xs sm:text-sm leading-relaxed">
-              {currentLang === 'en'
-                ? 'We believe every learner is unique. Through our proprietary student development system, we map each child\'s cognitive strengths, emotional wellbeing, and career aspirations.'
-                : 'Setiap anak memiliki keunikan dan potensi luar biasa. Melalui sistem asesmen dan konseling berjenjang, kami memastikan setiap siswa mendapatkan bimbingan akademik dan penguatan adab yang tepat.'}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-2xl bg-white border border-stone-200 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-sm">
-                01
-              </div>
-              <h3 className="font-serif text-lg font-semibold text-stone-900">
-                Getting to Know You (GTKY)
-              </h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                {currentLang === 'en'
-                  ? 'Comprehensive psychological diagnostic profiling to identify sensory learning styles (visual, auditory, kinesthetic) and intrinsic motivators.'
-                  : 'Asesmen awal untuk memetakan modalitas belajar (visual, auditori, kinestetik), minat bakat, dan karakter psikososial ananda.'}
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-stone-200 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-sm">
-                02
-              </div>
-              <h3 className="font-serif text-lg font-semibold text-stone-900">
-                One-on-One Mentor Check-ins
-              </h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                {currentLang === 'en'
-                  ? 'Bi-weekly dedicated private mentoring sessions between students and certified counselors to discuss personal goals, peer relations, and study discipline.'
-                  : 'Sesi temu wicara berkala antara siswa dan konselor/wali kelas untuk mengevaluasi perkembangan belajar, mengurai kendala, serta memupuk motivasi.'}
-              </p>
-            </div>
-
-            <div className="p-6 rounded-2xl bg-white border border-stone-200 space-y-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-900 flex items-center justify-center font-bold text-sm">
-                03
-              </div>
-              <h3 className="font-serif text-lg font-semibold text-stone-900">
-                Edu Expo & Career Fair
-              </h3>
-              <p className="text-xs text-stone-600 leading-relaxed">
-                {currentLang === 'en'
-                  ? 'Annual university fairs hosting admissions officers from UI, ITB, NUS, NTU, and European institutions, guiding students on portfolio submission and scholarships.'
-                  : 'Pameran pendidikan tahunan yang mempertemukan siswa langsung dengan perwakilan perguruan tinggi favorit PTN dan luar negeri serta bimbingan beasiswa.'}
-              </p>
-            </div>
-          </div>
+      {/* Overview Cards Gateway Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="text-center max-w-2xl mx-auto mb-12">
+          <span className="text-xs uppercase font-bold tracking-wider text-amber-800">
+            {currentLang === 'en' ? 'Explore Our Academic Pillars' : 'Pilihan Program & Jenjang'}
+          </span>
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mt-1 mb-3">
+            {currentLang === 'en' ? 'Dedicated Sub-Programs' : 'Pusat Informasi Jenjang Pendidikan'}
+          </h2>
+          <p className="text-xs sm:text-sm text-stone-600">
+            {currentLang === 'en'
+              ? 'Click any card below to open its dedicated page with complete course outlines, daily routines, and educator profiles.'
+              : 'Klik pada kartu program di bawah untuk membuka halaman tersendiri dengan silabus lengkap, jadwal belajar, dan rincian fasilitas.'}
+          </p>
         </div>
-      </section>
 
-      {/* Detailed Education Stages Tabs */}
-      <section className="py-16 sm:py-20 bg-white border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
-          <div className="max-w-3xl mb-8">
-            <span className="text-xs font-semibold uppercase tracking-wider text-amber-900 block mb-2">
-              {currentLang === 'en' ? 'Education Stages & Curricula' : 'Jenjang Pendidikan & Rincian Kurikulum'}
-            </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-stone-900 font-normal">
-              {currentLang === 'en' ? 'Explore each stage of the academic continuum' : 'Pelajari Setiap Jenjang Pendidikan Kami'}
-            </h2>
-          </div>
-
-          {/* Selector buttons */}
-          <div className="flex flex-wrap gap-2 p-1.5 bg-stone-100 rounded-xl max-w-2xl mb-8">
-            {academicPrograms.map((prog) => {
-              const isSelected = prog.id === activeLevelId;
-              return (
-                <button
-                  key={prog.id}
-                  onClick={() => setActiveLevelId(prog.id)}
-                  className={`flex-1 min-w-[130px] flex items-center justify-center gap-2 py-3 px-3 rounded-lg text-xs font-semibold transition-all ${
-                    isSelected
-                      ? 'bg-white text-stone-900 shadow-sm'
-                      : 'text-stone-600 hover:text-stone-950 hover:bg-stone-200/50'
-                  }`}
-                >
-                  {getIcon(prog.iconName)}
-                  <span>{prog.name[currentLang].split('(')[0].trim()}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Active Level Card */}
-          <div className="p-8 sm:p-12 rounded-2xl bg-stone-50 border border-stone-200">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-              
-              <div className="lg:col-span-8 space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {academicGatewayCards.map((card) => {
+            const Icon = card.icon;
+            return (
+              <div 
+                key={card.id}
+                className="bg-white rounded-3xl border border-stone-200 shadow-xs hover:shadow-xl hover:border-amber-400 transition-all flex flex-col justify-between p-7 group"
+              >
                 <div>
-                  <div className="flex items-center gap-2 text-xs text-stone-500 font-mono uppercase mb-1">
-                    <span>{activeProg.level[currentLang]}</span>
-                    <span>·</span>
-                    <span>{activeProg.grades}</span>
-                    <span>·</span>
-                    <span>{activeProg.ageGroup}</span>
+                  <div className="flex items-center justify-between gap-2 mb-4">
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-stone-100 text-stone-700 px-3 py-1 rounded-full border border-stone-200">
+                      {card.badge}
+                    </span>
+                    <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Icon className="w-5 h-5 text-amber-800" />
+                    </div>
                   </div>
-                  <h3 className="font-serif text-3xl font-medium text-stone-900">
-                    {activeProg.name[currentLang]}
+
+                  <h3 className="font-serif font-bold text-stone-900 text-xl mb-1 group-hover:text-amber-900 transition-colors">
+                    {card.title}
                   </h3>
-                  <div className="mt-2 text-xs font-semibold text-amber-900 bg-amber-100/70 border border-amber-300/60 rounded-md p-2.5 inline-block">
-                    <span className="text-stone-600 font-normal mr-1">{currentLang === 'en' ? 'Accredited Curriculum Framework:' : 'Kerangka Kurikulum Terakreditasi:'}</span>
-                    {activeProg.curriculum}
+                  <p className="text-xs text-amber-900/80 font-medium mb-3">
+                    {card.subtitle}
+                  </p>
+                  <p className="text-xs text-stone-600 leading-relaxed mb-6">
+                    {card.desc}
+                  </p>
+
+                  <div className="space-y-2 border-t border-stone-100 pt-4 mb-6">
+                    {card.highlights.map((h, i) => (
+                      <div key={i} className="flex items-center gap-2 text-xs text-stone-700">
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <span>{h}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <p className="text-sm text-stone-700 leading-relaxed">
-                  {activeProg.description[currentLang]}
-                </p>
-
-                {/* Highlights */}
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 mb-3">
-                    {currentLang === 'en' ? 'Curricular Distinctives:' : 'Keunggulan Pembelajaran:'}
-                  </h4>
-                  <ul className="space-y-2.5 text-xs text-stone-700">
-                    {activeProg.highlights[currentLang].map((h, hIdx) => (
-                      <li key={hIdx} className="flex items-start gap-2.5">
-                        <Check className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <button
+                  onClick={() => onNavigate(card.page)}
+                  className="w-full py-2.5 px-4 bg-stone-100 hover:bg-amber-800 hover:text-white text-stone-900 font-bold rounded-xl text-xs transition-all flex items-center justify-center gap-2 cursor-pointer group-hover:bg-amber-800 group-hover:text-white"
+                >
+                  <span>{card.cta}</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
               </div>
+            );
+          })}
+        </div>
+      </section>
 
-              {/* Right: Learning Outcomes & Actions */}
-              <div className="lg:col-span-4 bg-white p-6 rounded-xl border border-stone-200 flex flex-col justify-between space-y-6">
-                <div>
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-900 mb-3">
-                    {currentLang === 'en' ? 'Target Competencies & Outcomes:' : 'Target Kompetensi Kelulusan:'}
-                  </h4>
-                  <ul className="space-y-2 text-xs text-stone-700">
-                    {activeProg.outcomes[currentLang].map((out, outIdx) => (
-                      <li key={outIdx} className="flex items-start gap-2">
-                        <Sparkles className="w-3.5 h-3.5 text-amber-800 shrink-0 mt-0.5" />
-                        <span>{out}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="pt-4 border-t border-stone-100 space-y-2">
-                  <button
-                    onClick={() => onOpenAdmissions(activeProg.id)}
-                    className="w-full py-3 px-4 text-xs font-semibold text-white bg-amber-800 hover:bg-amber-900 rounded-xl transition-colors shadow-sm text-center"
-                  >
-                    {currentLang === 'en' ? 'Simulate Tuition for This Level' : 'Simulasi Biaya Jenjang Ini'}
-                  </button>
-                  <button
-                    onClick={() => onNavigate('contact')}
-                    className="w-full py-2.5 px-4 text-xs font-medium text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 rounded-xl transition-colors text-center"
-                  >
-                    {currentLang === 'en' ? 'Inquire via Admissions WhatsApp' : 'Tanya Jadwal Observasi'}
-                  </button>
-                </div>
-              </div>
-
-            </div>
+      {/* Admissions Callout */}
+      <section className="bg-amber-900 text-white py-14 px-4 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-2xl sm:text-3xl font-serif font-bold mb-3">
+            {currentLang === 'en' ? 'Ready to Begin Your Educational Journey?' : 'Siap Menjadi Bagian dari Pribadi Premiere?'}
+          </h2>
+          <p className="text-xs sm:text-sm text-amber-100 mb-6">
+            {currentLang === 'en'
+              ? 'Enrollment is open for all grades (TK, SD, SMP, SMA) for Academic Year 2026/2027.'
+              : 'Pendaftaran gelombang PPDB 2026/2027 dibuka untuk seluruh jenjang dengan kuota terbatas.'}
+          </p>
+          <div className="flex justify-center gap-3 flex-wrap">
+            <button
+              onClick={() => onOpenAdmissions()}
+              className="px-6 py-3 bg-white text-amber-950 font-bold rounded-xl text-xs sm:text-sm hover:bg-amber-100 cursor-pointer shadow-md"
+            >
+              {currentLang === 'en' ? 'Register Online Now' : 'Daftar PPDB Online'}
+            </button>
+            <button
+              onClick={() => onNavigate('admissions/calculator')}
+              className="px-6 py-3 bg-amber-950/70 text-amber-100 border border-amber-600 font-semibold rounded-xl text-xs sm:text-sm hover:bg-amber-950 cursor-pointer"
+            >
+              {currentLang === 'en' ? 'Estimate Tuition Investment' : 'Simulasi Biaya Masuk'}
+            </button>
           </div>
-
         </div>
       </section>
 

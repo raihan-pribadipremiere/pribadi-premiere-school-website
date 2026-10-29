@@ -11,7 +11,7 @@ import { Footer } from './components/Footer';
 import { BookTourModal } from './components/BookTourModal';
 import { WhatsAppConcierge } from './components/WhatsAppConcierge';
 
-// Dedicated Full Pages
+// Main Overview Gateway Pages
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { AcademicsPage } from './pages/AcademicsPage';
@@ -20,6 +20,40 @@ import { CampusLifePage } from './pages/CampusLifePage';
 import { AdmissionsPage } from './pages/AdmissionsPage';
 import { NewsPage } from './pages/NewsPage';
 import { ContactPage } from './pages/ContactPage';
+
+// Dedicated Sub-Pages: Academics
+import { KindergartenPage } from './pages/subpages/KindergartenPage';
+import { PrimaryPage } from './pages/subpages/PrimaryPage';
+import { JuniorHighPage } from './pages/subpages/JuniorHighPage';
+import { SeniorHighPage } from './pages/subpages/SeniorHighPage';
+import { ChromebookPage } from './pages/subpages/ChromebookPage';
+import { GTKYPage } from './pages/subpages/GTKYPage';
+
+// Dedicated Sub-Pages: About Us
+import { VisionMissionPage } from './pages/subpages/VisionMissionPage';
+import { FoundationPage } from './pages/subpages/FoundationPage';
+import { HeadmasterPage } from './pages/subpages/HeadmasterPage';
+import { AccreditationPage } from './pages/subpages/AccreditationPage';
+import { FacultyPage } from './pages/subpages/FacultyPage';
+
+// Dedicated Sub-Pages: Olympiad & Alumni
+import { OlympiadsPage } from './pages/subpages/OlympiadsPage';
+import { AlumniDestinationsPage } from './pages/subpages/AlumniDestinationsPage';
+import { OlympiadCampPage } from './pages/subpages/OlympiadCampPage';
+import { ScholarshipsPage } from './pages/subpages/ScholarshipsPage';
+
+// Dedicated Sub-Pages: Campus Life
+import { CampusFacilitiesPage } from './pages/subpages/CampusFacilitiesPage';
+import { RoboticsLabsPage } from './pages/subpages/RoboticsLabsPage';
+import { BoardingResidencePage } from './pages/subpages/BoardingResidencePage';
+import { SportsArenaPage } from './pages/subpages/SportsArenaPage';
+import { ExtracurricularsPage } from './pages/subpages/ExtracurricularsPage';
+
+// Dedicated Sub-Pages: PPDB Admissions
+import { AdmissionStepsPage } from './pages/subpages/AdmissionStepsPage';
+import { TuitionCalculatorPage } from './pages/subpages/TuitionCalculatorPage';
+import { ScholarshipGuidePage } from './pages/subpages/ScholarshipGuidePage';
+import { CampusTourBookingPage } from './pages/subpages/CampusTourBookingPage';
 
 import { ArrowRight } from 'lucide-react';
 
@@ -36,7 +70,19 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#/', '').replace('#', '');
-      const validPages = ['home', 'about', 'academics', 'achievements', 'campus-life', 'admissions', 'news', 'contact'];
+      const validPages = [
+        'home', 'about', 'academics', 'achievements', 'campus-life', 'admissions', 'news', 'contact',
+        // Academics subpages
+        'academics/kindergarten', 'academics/primary', 'academics/junior-high', 'academics/senior-high', 'academics/chromebook', 'academics/gtky',
+        // About subpages
+        'about/vision', 'about/heritage', 'about/headmaster', 'about/accreditations', 'about/faculty',
+        // Achievements subpages
+        'achievements/olympiads', 'achievements/destinations', 'achievements/camp', 'achievements/scholarships',
+        // Campus Life subpages
+        'campus-life/gdc', 'campus-life/labs', 'campus-life/boarding', 'campus-life/sports', 'campus-life/clubs',
+        // Admissions subpages
+        'admissions/steps', 'admissions/calculator', 'admissions/scholarships', 'admissions/tour'
+      ];
       if (validPages.includes(hash)) {
         setActivePage(hash);
       }
@@ -111,6 +157,7 @@ export default function App() {
 
       {/* Dynamic Multi-Page Content */}
       <main className="flex-1">
+        {/* Home */}
         {activePage === 'home' && (
           <HomePage
             currentLang={currentLang}
@@ -120,6 +167,7 @@ export default function App() {
           />
         )}
 
+        {/* Overview Gateway Pages */}
         {activePage === 'about' && (
           <AboutPage
             currentLang={currentLang}
@@ -155,6 +203,7 @@ export default function App() {
         {activePage === 'admissions' && (
           <AdmissionsPage
             currentLang={currentLang}
+            onNavigate={navigateTo}
             onOpenBooking={() => setIsTourModalOpen(true)}
             preselectedProgram={preselectedProgram}
           />
@@ -171,6 +220,227 @@ export default function App() {
           <ContactPage
             currentLang={currentLang}
             onOpenTour={() => setIsTourModalOpen(true)}
+          />
+        )}
+
+        {/* Academics Sub-Pages */}
+        {activePage === 'academics/kindergarten' && (
+          <KindergartenPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={handleOpenAdmissions}
+          />
+        )}
+
+        {activePage === 'academics/primary' && (
+          <PrimaryPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={handleOpenAdmissions}
+          />
+        )}
+
+        {activePage === 'academics/junior-high' && (
+          <JuniorHighPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={handleOpenAdmissions}
+          />
+        )}
+
+        {activePage === 'academics/senior-high' && (
+          <SeniorHighPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={handleOpenAdmissions}
+          />
+        )}
+
+        {activePage === 'academics/chromebook' && (
+          <ChromebookPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'academics/gtky' && (
+          <GTKYPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {/* About Sub-Pages */}
+        {activePage === 'about/vision' && (
+          <VisionMissionPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'about/heritage' && (
+          <FoundationPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'about/headmaster' && (
+          <HeadmasterPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'about/accreditations' && (
+          <AccreditationPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'about/faculty' && (
+          <FacultyPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {/* Achievements Sub-Pages */}
+        {activePage === 'achievements/olympiads' && (
+          <OlympiadsPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'achievements/destinations' && (
+          <AlumniDestinationsPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'achievements/camp' && (
+          <OlympiadCampPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'achievements/scholarships' && (
+          <ScholarshipsPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {/* Campus Life Sub-Pages */}
+        {activePage === 'campus-life/gdc' && (
+          <CampusFacilitiesPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'campus-life/labs' && (
+          <RoboticsLabsPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'campus-life/boarding' && (
+          <BoardingResidencePage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'campus-life/sports' && (
+          <SportsArenaPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'campus-life/clubs' && (
+          <ExtracurricularsPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {/* Admissions Sub-Pages */}
+        {activePage === 'admissions/steps' && (
+          <AdmissionStepsPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'admissions/calculator' && (
+          <TuitionCalculatorPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={handleOpenAdmissions}
+          />
+        )}
+
+        {activePage === 'admissions/scholarships' && (
+          <ScholarshipGuidePage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
+          />
+        )}
+
+        {activePage === 'admissions/tour' && (
+          <CampusTourBookingPage
+            currentLang={currentLang}
+            onNavigate={navigateTo}
+            onOpenTourModal={() => setIsTourModalOpen(true)}
+            onOpenAdmissions={() => handleOpenAdmissions()}
           />
         )}
       </main>

@@ -50,14 +50,6 @@ export const schoolProfile = {
     admissionsEmail: 'admission.premiere@pribadidepok.sch.id',
     operatingHours: 'Monday – Friday: 07:30 – 16:00 WIB, Saturday: 08:30 – 14:00 WIB'
   },
-  locationMargonda: {
-    address: 'Jl. Margonda Raya No. 229, Kemiri Muka, Kecamatan Beji, Kota Depok, Jawa Barat 16423',
-    phone: '+62 (21) 775 8888',
-    whatsapp: '+62 812-8899-7722',
-    email: 'info@pribadidepok.sch.id',
-    admissionsEmail: 'admissions@pribadidepok.sch.id',
-    operatingHours: 'Monday – Friday: 07:30 – 16:00 WIB'
-  },
   metrics: [
     { value: '100%', label: { en: 'High School Alumni University Entry', id: 'Kelulusan Alumni SMA ke PTN/Global' }, context: 'Graduates accepted to UI, ITB, UGM & top universities' },
     { value: '1 : 10', label: { en: 'Student-Teacher Ratio', id: 'Rasio Guru & Murid di Kelas' }, context: 'Personalized attention for every pupil' },
@@ -474,79 +466,79 @@ export const campusesData: CampusLocation[] = [
   {
     id: 'gdc-premiere',
     name: {
-      en: 'Pribadi Premiere School (Grand Depok City)',
-      id: 'Pribadi Premiere School (Grand Depok City)'
+      en: 'Pribadi Premiere School (Academic Complex)',
+      id: 'Pribadi Premiere School (Kompleks Akademik)'
     },
     badge: {
-      en: 'Next-Gen Digital Campus',
-      id: 'Kampus Modern Digital GDC'
+      en: 'Next-Gen Digital Campus (4,000 m²)',
+      id: 'Kampus Modern Digital GDC (4.000 m²)'
     },
-    address: 'Jl. Boulevard Grand Depok City (GDC), Sukmajaya, Kota Depok, Jawa Barat',
+    address: 'Jl. Boulevard Grand Depok City, Tirtajaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16412',
     district: 'Grand Depok City, Sukmajaya',
     description: {
-      en: 'A state-of-the-art campus under Yayasan Yenbu Indonesia featuring high-tech digital learning commons, advanced robotics and AI facilities, Cambridge International curriculum, and seamless pre-university preparation.',
-      id: 'Kampus ekspansi modern Yayasan Yenbu Indonesia dengan fasilitas pembelajaran digital mutakhir, laboratorium AI & robotika, kurikulum Cambridge, serta jembatan akselerasi menuju perguruan tinggi global.'
+      en: 'A purpose-built 4,000 m² flagship campus under Yayasan Yenbu Indonesia featuring 1:1 Chromebook digital classrooms, Cambridge International curriculum, advanced AI & robotics studios, and a semi-Olympic aquatic center.',
+      id: 'Kampus terpadu modern seluas 4.000 m² di bawah naungan Yayasan Yenbu Indonesia dengan ruang kelas digital 1:1 Chromebook, kurikulum Cambridge, studio inovasi AI & robotika, serta gelanggang olahraga.'
     },
     highlights: {
       en: [
         'AI & Advanced Robotics Innovation Studio',
-        'Cambridge Assessment International Education (CAIE)',
-        'Next-Gen Interactive Digital Classrooms',
+        'Cambridge Assessment International Education (CAIE ID248)',
+        '1:1 Chromebook Interactive Digital Classrooms',
         'Global University Placement Advisory Center',
         'Semi-Olympic Aquatic Center & Multi-Sport Arena'
       ],
       id: [
         'Studio Inovasi AI & Robotika Canggih',
-        'Penyelenggara Resmi Cambridge International',
-        'Ruang Kelas Cerdas Digital Interaktif',
-        'Pusat Bimbingan Masuk Universitas Dunia',
+        'Penyelenggara Resmi Cambridge International (ID248)',
+        'Ruang Kelas Cerdas Digital 1:1 Chromebook',
+        'Pusat Bimbingan Masuk Perguruan Tinggi Dunia & PTN',
         'Kolam Renang Semi-Olimpiade & Sarana Olahraga'
       ]
     },
-    levels: ['Primary (SD)', 'Junior High (SMP)', 'Senior High (SMA)'],
-    phone: '+62 (21) 8045 9900',
-    whatsapp: '+62 811-9877-2200',
+    levels: ['Preschool (TK)', 'Primary (SD)', 'Junior High (SMP)', 'Senior High (SMA)'],
+    phone: '+62 812-3233-1995',
+    whatsapp: '+62 812-3233-1995',
     mapsUrl: 'https://maps.google.com/?q=Grand+Depok+City+Sukmajaya+Depok',
     isPremiere: true,
     image: '/src/assets/images/school_campus_exterior_1793156837942.jpg'
   },
   {
-    id: 'margonda-campus',
+    id: 'gdc-boarding',
     name: {
-      en: 'Pribadi Bilingual School (Margonda Campus)',
-      id: 'Sekolah Pribadi Depok (Kampus Margonda)'
+      en: 'Pribadi Premiere Boarding Residence',
+      id: 'Asrama Siswa Pribadi Premiere'
     },
     badge: {
-      en: 'Heritage & Boarding Campus',
-      id: 'Kampus Bersejarah & Asrama'
+      en: '24h Mentored Student Residence',
+      id: 'Asrama Siswa 24 Jam & Bimbingan Berkarakter'
     },
-    address: 'Jl. Margonda Raya No. 229, Kemiri Muka, Kecamatan Beji, Kota Depok, Jawa Barat 16423',
-    district: 'Margonda Raya, Beji',
+    address: 'Kompleks Kampus Pribadi Premiere, Jl. Boulevard Grand Depok City, Sukmajaya, Depok 16412',
+    district: 'Grand Depok City, Sukmajaya',
     description: {
-      en: 'The founding campus established in 1995, renowned for national OSN championship dominance, rigorous character education, complete boarding house facilities, and international Cambridge certification.',
-      id: 'Kampus utama berdedikasi sejak 1995, pencetak juara Olimpiade Sains Nasional (OSN) dan Internasional, pembinaan adab berkarakter, fasilitas asrama putra-putri lengkap, dan akreditasi A Unggul.'
+      en: 'Comprehensive 24-hour student boarding residence offering secure air-conditioned dormitories, dedicated resident mentors, nutritious chef-prepared dining, and supervised evening Olympiad & academic coaching.',
+      id: 'Fasilitas asrama terpadu 24 jam dengan kamar ber-AC, pengawasan pembina asrama berdedikasi, makan bergizi 3 kali sehari, serta bimbingan malam intensif untuk olimpiade sains dan tugas akademik.'
     },
     highlights: {
       en: [
-        '30+ Years of Dedication & Academic Distinction',
-        '140+ National & International Science Olympiad Medals',
-        'Comprehensive Male & Female Boarding Residence',
-        'Cambridge Checkpoint, IGCSE & A-Level Center',
-        'Strategic location adjacent to Universitas Indonesia (UI)'
+        'Separate Air-Conditioned Male & Female Quarters',
+        '24/7 Biometric Access Control & Health Clinic',
+        'Supervised Evening Study (Etude) & Olympiad Clinics',
+        'Nutritious Chef-Prepared Meal Plans',
+        'Character Mentoring & Tahfidz Quran Sessions'
       ],
       id: [
-        '30+ Tahun Berdedikasi Mendidik Generasi Unggul',
-        '140+ Medali Olimpiade Sains Nasional & Dunia',
-        'Asrama Putra & Putri Terpisah Berfasilitas Lengkap',
-        'Pusat Sertifikasi Resmi Cambridge ID248',
-        'Lokasi Sangat Strategis dekat Kampus UI Depok'
+        'Gedung Asrama Putra & Putri Terpisah Ber-AC',
+        'Keamanan 24 Jam dengan Akses Biometrik & Klinik Medis',
+        'Bimbingan Belajar Malam (Etude) & Klinik OSN Terarah',
+        'Menu Makanan Sehat Bergizi Terstandar',
+        'Pembinaan Adab Berkarakter & Hafalan Tahfidz'
       ]
     },
-    levels: ['Preschool (TK)', 'Primary (SD)', 'Junior High (SMP)', 'Senior High (SMA)'],
-    phone: '+62 (21) 775 8888',
-    whatsapp: '+62 812-8899-7722',
-    mapsUrl: 'https://maps.google.com/?q=Pribadi+Bilingual+School+Depok+Margonda',
-    isPremiere: false,
+    levels: ['Junior High (SMP)', 'Senior High (SMA)'],
+    phone: '+62 812-3233-1995',
+    whatsapp: '+62 812-3233-1995',
+    mapsUrl: 'https://maps.google.com/?q=Grand+Depok+City+Sukmajaya+Depok',
+    isPremiere: true,
     image: '/src/assets/images/school_stem_laboratory_1793156854859.jpg'
   }
 ];

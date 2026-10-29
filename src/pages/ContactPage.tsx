@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Language } from '../types';
-import { schoolProfile, campusesData } from '../data/schoolData';
-import { MapPin, Phone, Mail, Clock, MessageSquare, Send, CheckCircle2, Calendar, ExternalLink } from 'lucide-react';
+import { schoolProfile } from '../data/schoolData';
+import { MapPin, Phone, Mail, Clock, MessageSquare, Send, CheckCircle2, Calendar, ExternalLink, Building2, Bed } from 'lucide-react';
 
 interface ContactPageProps {
   currentLang: Language;
@@ -16,7 +16,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
     parentName: '',
     phone: '',
     email: '',
-    campus: 'gdc-premiere',
+    programType: 'day', // 'day' | 'boarding'
     level: 'primary',
     message: ''
   });
@@ -36,7 +36,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-4">
             <span className="text-xs font-mono uppercase tracking-widest text-amber-400">
-              {currentLang === 'en' ? 'Campuses & Contact' : 'Kontak & Lokasi Kampus'}
+              {currentLang === 'en' ? 'Pribadi Premiere Contact & Admissions' : 'Kontak & Informasi Admisi'}
             </span>
             <h1 className="font-serif text-4xl sm:text-5xl font-normal tracking-tight text-white leading-tight">
               {currentLang === 'en'
@@ -45,37 +45,38 @@ export const ContactPage: React.FC<ContactPageProps> = ({
             </h1>
             <p className="text-stone-300 text-base sm:text-lg leading-relaxed">
               {currentLang === 'en'
-                ? 'We are located at two strategic locations in Depok: our flagship digital campus in Grand Depok City and our heritage campus on Margonda Raya.'
-                : 'Kami siap menyambut Anda di dua lokasi strategis Kota Depok: kampus modern Grand Depok City dan kampus bersejarah Margonda Raya.'}
+                ? 'Located at Grand Depok City, our modern 4,000 m² campus welcomes prospective families for admissions consultations, assessment schedules, and Saturday guided campus tours.'
+                : 'Berlokasi di Grand Depok City, kampus modern 4.000 m² kami siap menyambut calon orang tua murid untuk konsultasi pendaftaran PPDB, asesmen minat bakat, dan tur kampus.'}
             </p>
           </div>
         </div>
       </section>
 
-      {/* Main Campuses Info Cards */}
+      {/* Main Campus Information Cards */}
       <section className="py-16 bg-white border-b border-stone-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
             
-            {/* Campus 1: Grand Depok City */}
+            {/* Card 1: Academic & Admissions Office (Grand Depok City) */}
             <div className="p-8 rounded-2xl bg-stone-50 border border-stone-200 space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono uppercase bg-amber-100 text-amber-900 px-2.5 py-1 rounded font-semibold">
-                    Next-Gen Digital Campus
+                  <span className="text-[11px] font-mono uppercase bg-amber-100 text-amber-900 px-2.5 py-1 rounded font-semibold flex items-center gap-1.5">
+                    <Building2 className="w-3.5 h-3.5" />
+                    Next-Gen Digital Campus (4,000 m²)
                   </span>
                   <span className="text-xs text-stone-500 font-mono">GDC, Sukmajaya</span>
                 </div>
 
                 <h3 className="font-serif text-2xl font-medium text-stone-900">
-                  Pribadi Premiere School (Grand Depok City)
+                  Pribadi Premiere School (Admissions Office)
                 </h3>
 
                 <p className="text-xs text-stone-600 leading-relaxed">
                   {currentLang === 'en'
-                    ? 'Our 4,000 m² purpose-built campus in Grand Depok City, dedicated to 1:1 Chromebook digital classrooms, Cambridge curricula, robotics labs, and pre-university bridges.'
-                    : 'Kampus modern seluas 4.000 m² di Boulevard Grand Depok City, dilengkapi ruang kelas digital 1:1 Chromebook, kurikulum Cambridge, studio robotika, dan kolam renang.'}
+                    ? 'Our 4,000 m² purpose-built campus in Grand Depok City, dedicated to 1:1 Chromebook digital classrooms, Cambridge curricula, robotics labs, semi-Olympic pool, and pre-university bridges.'
+                    : 'Kampus modern seluas 4.000 m² di Boulevard Grand Depok City, dilengkapi ruang kelas digital 1:1 Chromebook, kurikulum Cambridge, studio robotika, dan kolam renang semi-olimpiade.'}
                 </p>
 
                 <div className="space-y-2.5 pt-2 text-xs text-stone-700">
@@ -107,7 +108,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   href="https://wa.me/6281232331995?text=Halo%20Ms.%20Dinda,%20saya%20ingin%20berkonsultasi%20mengenai%20Pribadi%20Premiere%20Grand%20Depok%20City."
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors cursor-pointer"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>WhatsApp Ms. Dinda</span>
@@ -124,69 +125,55 @@ export const ContactPage: React.FC<ContactPageProps> = ({
               </div>
             </div>
 
-            {/* Campus 2: Margonda Raya */}
+            {/* Card 2: Boarding Residence & Student Life Office */}
             <div className="p-8 rounded-2xl bg-stone-50 border border-stone-200 space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-[11px] font-mono uppercase bg-stone-200 text-stone-800 px-2.5 py-1 rounded font-semibold">
-                    Heritage & Boarding Campus
+                  <span className="text-[11px] font-mono uppercase bg-amber-100 text-amber-900 px-2.5 py-1 rounded font-semibold flex items-center gap-1.5">
+                    <Bed className="w-3.5 h-3.5" />
+                    24h Student Boarding Residence
                   </span>
-                  <span className="text-xs text-stone-500 font-mono">Margonda, Beji</span>
+                  <span className="text-xs text-stone-500 font-mono">SMP & SMA</span>
                 </div>
 
                 <h3 className="font-serif text-2xl font-medium text-stone-900">
-                  Sekolah Pribadi Depok (Margonda Campus)
+                  Pribadi Premiere Boarding Residence
                 </h3>
 
                 <p className="text-xs text-stone-600 leading-relaxed">
                   {currentLang === 'en'
-                    ? 'The founding campus established in 1995, home to our national science olympiad champions, Cambridge ID248 examination center, and full male/female boarding residences.'
-                    : 'Kampus utama berdedikasi sejak 1995, pencetak juara Olimpiade Sains Nasional (OSN), pusat sertifikasi Cambridge ID248, dan asrama putra-putri terpadu.'}
+                    ? 'Our dedicated on-campus student residence offering separate male and female air-conditioned quarters, resident mentors, supervised evening study (Etude), and nutritious dining.'
+                    : 'Fasilitas asrama terpadu di dalam kampus Grand Depok City dengan gedung terpisah putra & putri, pembina asrama 24 jam, bimbingan belajar malam, dan katering higienis.'}
                 </p>
 
                 <div className="space-y-2.5 pt-2 text-xs text-stone-700">
                   <div className="flex items-start gap-2.5">
                     <MapPin className="w-4 h-4 text-amber-800 shrink-0 mt-0.5" />
-                    <span>{schoolProfile.locationMargonda.address}</span>
+                    <span>Kompleks Kampus Pribadi Premiere, Jl. Boulevard Grand Depok City, Depok 16412</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <Phone className="w-4 h-4 text-amber-800 shrink-0" />
-                    <span>Telepon: {schoolProfile.locationMargonda.phone}</span>
-                  </div>
-                  <div className="flex items-center gap-2.5">
-                    <Phone className="w-4 h-4 text-amber-800 shrink-0" />
-                    <span>WhatsApp Admisi: {schoolProfile.locationMargonda.whatsapp}</span>
+                    <span>Hotline Asrama: +62 812-3233-1995 (Konsultasi Asrama)</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <Mail className="w-4 h-4 text-amber-800 shrink-0" />
-                    <span>{schoolProfile.locationMargonda.email}</span>
+                    <span>admission.premiere@pribadidepok.sch.id</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <Clock className="w-4 h-4 text-amber-800 shrink-0" />
-                    <span>{schoolProfile.locationMargonda.operatingHours}</span>
+                    <span>24/7 Biometric Security & Health Clinic</span>
                   </div>
                 </div>
               </div>
 
               <div className="pt-4 border-t border-stone-200/80 flex flex-wrap gap-2">
-                <a
-                  href="https://wa.me/6281288997722?text=Halo%20Admin%20Sekolah%20Pribadi%20Margonda,%20saya%20ingin%20berkonsultasi%20mengenai%20pendaftaran%20dan%20asrama."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors"
+                <button
+                  onClick={onOpenTour}
+                  className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-stone-800 bg-white hover:bg-stone-100 border border-stone-300 rounded-lg transition-colors cursor-pointer"
                 >
-                  <MessageSquare className="w-3.5 h-3.5" />
-                  <span>WhatsApp Margonda</span>
-                </a>
-                <a
-                  href="https://maps.google.com/?q=Pribadi+Bilingual+School+Depok+Margonda"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 px-3 py-2 text-xs font-medium text-stone-700 bg-white border border-stone-300 hover:bg-stone-100 rounded-lg transition-colors"
-                >
-                  <span>Google Maps</span>
-                  <ExternalLink className="w-3 h-3" />
-                </a>
+                  <Calendar className="w-3.5 h-3.5 text-amber-800" />
+                  <span>{currentLang === 'en' ? 'Tour Boarding Facilities' : 'Kunjungi Asrama'}</span>
+                </button>
               </div>
             </div>
 
@@ -207,14 +194,14 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                 </h3>
                 <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                   {currentLang === 'en'
-                    ? 'Leave your contact information along with questions about school curricula, fees, or boarding programs.'
-                    : 'Tinggalkan kontak dan pertanyaan Anda mengenai kurikulum, program beasiswa, atau asrama.'}
+                    ? 'Leave your contact information along with questions about school curricula, fees, or boarding programs at Pribadi Premiere.'
+                    : 'Tinggalkan kontak dan pertanyaan Anda mengenai kurikulum, program beasiswa, atau asrama di Pribadi Premiere School.'}
                 </p>
 
                 <div className="pt-2">
                   <button
                     onClick={onOpenTour}
-                    className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-stone-800 bg-white hover:bg-stone-50 border border-stone-300 rounded-xl transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-stone-800 bg-white hover:bg-stone-50 border border-stone-300 rounded-xl transition-colors cursor-pointer"
                   >
                     <Calendar className="w-4 h-4 text-amber-800" />
                     <span>{currentLang === 'en' ? 'Or Book a Saturday Campus Visit' : 'Atau Jadwalkan Tur Kampus Sabtu'}</span>
@@ -231,12 +218,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     </h4>
                     <p className="text-xs text-stone-600 max-w-md mx-auto">
                       {currentLang === 'en'
-                        ? 'Our admissions officer will contact your WhatsApp number shortly.'
-                        : 'Tim admisi kami akan segera menghubungi nomor WhatsApp Anda untuk memberikan penjelasan lengkap.'}
+                        ? 'Our admissions officer (Ms. Dinda) will contact your WhatsApp number shortly.'
+                        : 'Tim admisi kami (Ms. Dinda) akan segera menghubungi nomor WhatsApp Anda untuk memberikan penjelasan lengkap.'}
                     </p>
                     <button
                       onClick={() => setSubmitted(false)}
-                      className="px-4 py-2 text-xs font-medium text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-lg"
+                      className="px-4 py-2 text-xs font-medium text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-lg cursor-pointer"
                     >
                       {currentLang === 'en' ? 'Send another inquiry' : 'Kirim pesan lain'}
                     </button>
@@ -275,15 +262,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-xs font-semibold text-stone-700 mb-1">
-                          {currentLang === 'en' ? 'Target Campus' : 'Pilihan Kampus'}
+                          {currentLang === 'en' ? 'Enrollment Type' : 'Pilihan Program'}
                         </label>
                         <select
-                          value={inquiryForm.campus}
-                          onChange={(e) => setInquiryForm({ ...inquiryForm, campus: e.target.value })}
+                          value={inquiryForm.programType}
+                          onChange={(e) => setInquiryForm({ ...inquiryForm, programType: e.target.value })}
                           className="w-full text-xs p-2.5 rounded-lg border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none"
                         >
-                          <option value="gdc-premiere">Grand Depok City (Premiere)</option>
-                          <option value="margonda-campus">Margonda Raya (Bilingual & Boarding)</option>
+                          <option value="day">{currentLang === 'en' ? 'Day Student (Non-Boarding)' : 'Siswa Reguler (Non-Asrama)'}</option>
+                          <option value="boarding">{currentLang === 'en' ? 'Boarding Student (Asrama 24 Jam)' : 'Siswa Asrama (Boarding 24 Jam)'}</option>
                         </select>
                       </div>
                       <div>
@@ -319,7 +306,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                     <div className="flex justify-end pt-1">
                       <button
                         type="submit"
-                        className="inline-flex items-center gap-1.5 px-6 py-2.5 text-xs font-semibold text-white bg-amber-800 hover:bg-amber-900 rounded-xl transition-colors shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-6 py-2.5 text-xs font-semibold text-white bg-amber-800 hover:bg-amber-900 rounded-xl transition-colors shadow-sm cursor-pointer"
                       >
                         <Send className="w-3.5 h-3.5" />
                         <span>{currentLang === 'en' ? 'Submit Inquiry' : 'Kirim Pesan'}</span>

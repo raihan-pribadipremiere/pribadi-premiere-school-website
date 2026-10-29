@@ -1,7 +1,7 @@
 import React from 'react';
 import { Language } from '../types';
-import { schoolProfile, campusesData } from '../data/schoolData';
-import { MapPin, Phone, Mail, Award, Globe, Shield, ArrowUp } from 'lucide-react';
+import { schoolProfile } from '../data/schoolData';
+import { MapPin, Phone, Mail, Clock, ArrowUp, Sparkles, Calendar } from 'lucide-react';
 
 interface FooterProps {
   currentLang: Language;
@@ -29,7 +29,7 @@ export const Footer: React.FC<FooterProps> = ({
 
   return (
     <footer className="bg-stone-900 text-stone-300 border-t border-stone-800">
-      {/* Upper Footer: Highlights & Campuses */}
+      {/* Upper Footer: Highlights & Campus Information */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10">
           
@@ -44,26 +44,26 @@ export const Footer: React.FC<FooterProps> = ({
                   Pribadi Premiere School
                 </span>
                 <span className="block text-[11px] text-amber-400 font-mono tracking-wide uppercase">
-                  Grand Depok City & Margonda Campuses
+                  Grand Depok City Campus (4,000 m²)
                 </span>
               </div>
             </div>
 
-            <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
+            <p className="text-xs text-stone-400 leading-relaxed max-w-sm italic">
               "{schoolProfile.tagline[currentLang]}"
             </p>
             <p className="text-xs text-stone-400 leading-relaxed max-w-sm">
               {currentLang === 'en'
-                ? 'Empowering students through Cambridge International curricula, 1:1 Chromebook digital classrooms, and national character formation under Yayasan Yenbu Indonesia.'
-                : 'Membina generasi unggul berstandar global melalui kurikulum Cambridge International, ruang kelas digital 1:1, dan pembinaan karakter di bawah naungan Yayasan Yenbu Indonesia.'}
+                ? 'Empowering students through Cambridge International curricula, 1:1 Chromebook digital classrooms, state-of-the-art STEM facilities, and national character formation under Yayasan Yenbu Indonesia.'
+                : 'Membina generasi unggul berstandar global melalui kurikulum Cambridge International, ruang kelas digital 1:1, studio robotika mutakhir, dan pembinaan karakter di bawah naungan Yayasan Yenbu Indonesia.'}
             </p>
 
             <div className="pt-2 flex flex-wrap gap-2 text-[11px]">
               <span className="px-2.5 py-1 bg-stone-800 border border-stone-700 rounded text-stone-300">
-                Cambridge School ID248
+                Cambridge ID248
               </span>
               <span className="px-2.5 py-1 bg-stone-800 border border-stone-700 rounded text-stone-300">
-                Akreditasi A Unggul
+                Akreditasi "A" Unggul BAN-SM
               </span>
               <span className="px-2.5 py-1 bg-stone-800 border border-stone-700 rounded text-stone-300">
                 SPK Kemendikbud
@@ -114,13 +114,13 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <button onClick={() => handleNav('contact')} className="hover:text-amber-400 transition-colors text-left cursor-pointer">
-                  {currentLang === 'en' ? 'Contact & Locations' : 'Kontak & Lokasi'}
+                  {currentLang === 'en' ? 'Contact & Location' : 'Kontak & Lokasi'}
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Campus 1: GDC Premiere (3 cols) */}
+          {/* Campus Location: GDC Premiere (3 cols) */}
           <div className="lg:col-span-3 space-y-2 text-xs">
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
               Pribadi Premiere (Grand Depok City)
@@ -130,45 +130,54 @@ export const Footer: React.FC<FooterProps> = ({
             </p>
             <div className="space-y-1 pt-1 text-stone-400">
               <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-stone-500" />
+                <Phone className="w-3.5 h-3.5 text-stone-500 shrink-0" />
                 <span>{schoolProfile.locationGdc.phone} ({schoolProfile.locationGdc.contactPerson})</span>
               </div>
               <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-stone-500" />
+                <Mail className="w-3.5 h-3.5 text-stone-500 shrink-0" />
                 <span>{schoolProfile.locationGdc.email}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-3.5 h-3.5 text-stone-500 shrink-0" />
+                <span>{schoolProfile.locationGdc.operatingHours}</span>
               </div>
             </div>
             <p className="text-[11px] text-stone-500 pt-1">
-              TK · SD · SMP · SMA (4,000 m² Digital Campus)
+              TK · SD · SMP · SMA (4,000 m² Digital Campus & 24h Boarding)
             </p>
           </div>
 
-          {/* Campus 2: Margonda (3 cols) */}
-          <div className="lg:col-span-3 space-y-2 text-xs">
+          {/* Admissions & Quick Actions (3 cols) */}
+          <div className="lg:col-span-3 space-y-3 text-xs">
             <h4 className="text-xs font-bold uppercase tracking-wider text-amber-400">
-              Pribadi Margonda Campus
+              {currentLang === 'en' ? 'Enrollment & Campus Tour' : 'Penerimaan Siswa Baru'}
             </h4>
             <p className="text-stone-400 leading-relaxed">
-              {schoolProfile.locationMargonda.address}
+              {currentLang === 'en'
+                ? 'PPDB 2026/2027 is currently open with Early Bird incentives and Science Olympiad scholarships up to 100%.'
+                : 'PPDB 2026/2027 saat ini dibuka dengan potongan Early Bird 15% serta beasiswa prestasi sains hingga 100%.'}
             </p>
-            <div className="space-y-1 pt-1 text-stone-400">
-              <div className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-stone-500" />
-                <span>{schoolProfile.locationMargonda.phone}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Mail className="w-3.5 h-3.5 text-stone-500" />
-                <span>{schoolProfile.locationMargonda.email}</span>
-              </div>
+            <div className="space-y-2 pt-1">
+              <button
+                onClick={onOpenAdmissions}
+                className="w-full flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-bold text-white bg-amber-800 hover:bg-amber-900 rounded-lg transition-colors cursor-pointer"
+              >
+                <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                <span>{currentLang === 'en' ? 'Register for PPDB Online' : 'Daftar PPDB Online'}</span>
+              </button>
+              <button
+                onClick={onOpenTourModal}
+                className="w-full flex items-center justify-center gap-1.5 px-3 py-2 text-xs font-semibold text-stone-300 hover:text-white bg-stone-800 hover:bg-stone-700 border border-stone-700 rounded-lg transition-colors cursor-pointer"
+              >
+                <Calendar className="w-3.5 h-3.5 text-amber-400" />
+                <span>{currentLang === 'en' ? 'Book Saturday Tour' : 'Jadwalkan Tur Kampus Sabtu'}</span>
+              </button>
             </div>
-            <p className="text-[11px] text-stone-500 pt-1">
-              TK · SD · SMP · SMA · Full Boarding House
-            </p>
           </div>
 
         </div>
 
-        {/* Lower Banner: PPDB Quick Contact Strip */}
+        {/* Lower Banner: Copyright Strip */}
         <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-stone-400 text-center sm:text-left">
             <span>© {new Date().getFullYear()} Pribadi Premiere School. Yayasan Yenbu Indonesia.</span>
