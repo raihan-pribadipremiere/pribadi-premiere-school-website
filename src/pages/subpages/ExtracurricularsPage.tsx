@@ -25,10 +25,46 @@ export const ExtracurricularsPage: React.FC<ExtracurricularsPageProps> = ({
   ];
 
   const clubs = [
-    { category: 'STEM & Technology', items: ['Robotics & IoT Club', 'Python & Game Coding', 'Science Olympiad Club', 'Astronomy Society'] },
-    { category: 'Arts & Creative', items: ['Orchestra & Traditional Ensemble', 'Graphic Design & Photography', 'Digital Illustration', 'Drama & Theatre'] },
-    { category: 'Athletics & Martial Arts', items: ['Competitive Swimming', 'Basketball Club', 'Futsal League', 'Traditional Archery (Panahan)', 'Pencak Silat'] },
-    { category: 'Leadership & Humanities', items: ['Model United Nations (MUN)', 'English Debate Society', 'Pramuka & PMR', 'Journalism & School Media', 'Tahfidz Community'] }
+    { 
+      category: 'STEM & Digital Innovation', 
+      items: [
+        'AI & Robotics Innovation Club', 
+        '1:1 Chromebook Coding Lab', 
+        'Science Olympiad (OSN Research)', 
+        'Web & Python Development',
+        'Astronomy & Space Science'
+      ] 
+    },
+    { 
+      category: 'Arts, Literacy & Public Speaking', 
+      items: [
+        'Public Speaking & English Debate', 
+        'Seni Baca Puisi & Teater Kreatif', 
+        'Pribadi Membaca Literacy Society', 
+        'Paduan Suara & Orkestra Musik', 
+        'Desain Grafis & Multimedia Media'
+      ] 
+    },
+    { 
+      category: 'Sports & Aquatic Excellence', 
+      items: [
+        'Semi-Olympic Aquatic & Swimming Club', 
+        'Traditional Archery (Panahan)', 
+        'Basketball & Futsal League', 
+        'Badminton & Table Tennis', 
+        'Pencak Silat & Self-Defense'
+      ] 
+    },
+    { 
+      category: 'Leadership & Community Service', 
+      items: [
+        'Pribadi Mengajar (English Outreach with Native Speakers)', 
+        'Pribadi Berbagi (Social Action & Charity)', 
+        'Model United Nations (MUN)', 
+        'OSIS Student Council Leadership', 
+        'Tahfidz Al-Qur\'an & Character Habituation'
+      ] 
+    }
   ];
 
   return (

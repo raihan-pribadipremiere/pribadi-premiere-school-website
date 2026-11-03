@@ -25,30 +25,45 @@ export const schoolProfile = {
   },
   missions: {
     en: [
-      'Provide holistic education combining Cambridge academic rigor and national Kurikulum Merdeka values.',
-      'Deploy 1-to-1 Digital Classroom technologies (Chromebooks & Edutech) fostering 21st-century problem solvers.',
-      'Nurture individual talents through personalized assessments (GTKY & One-on-One Mentoring).',
-      'Bridge students toward leading Indonesian public universities (PTN) and world top 100 universities.'
+      'Elevate student personality and character in a balanced manner across both religious and social dimensions.',
+      'Enhance academic and non-academic achievements at institutional, regional, national, and international levels.',
+      'Prepare students to transition into world-class higher education through high-quality pedagogy and modern digital technology.',
+      'Equip students with diverse competencies aligned with their unique interests, talents, and future aspirations.',
+      'Cultivate sincere compassion, mutual respect, patriotism, and love for the Unitary State of the Republic of Indonesia.'
     ],
     id: [
-      'Menyelenggarakan pendidikan holistik memadukan keunggulan akademik Cambridge dan Kurikulum Merdeka.',
-      'Mengintegrasikan pembelajaran Digital Classroom 1:1 (Chromebook & Edutech) untuk mencetak pemecah masalah abad ke-21.',
-      'Membimbing potensi unik setiap siswa melalui asesmen minat bakat (GTKY & Konseling One-on-One).',
-      'Mengantarkan lulusan menuju perguruan tinggi terbaik nasional (PTN) dan top 100 dunia.'
+      'Meningkatkan kualitas kepribadian siswa secara seimbang dalam aspek religius maupun sosial.',
+      'Meningkatkan prestasi akademik dan non-akademik baik di tingkat sekolah, regional, nasional, maupun internasional.',
+      'Mempersiapkan siswa untuk melanjutkan pendidikan ke jenjang yang lebih tinggi melalui sistem pembelajaran berkualitas dan pemanfaatan teknologi modern.',
+      'Membekali siswa dengan berbagai keterampilan sesuai minat dan bakat mereka.',
+      'Menumbuhkan rasa cinta kasih kepada sesama, bangsa, dan Negara Kesatuan Republik Indonesia.'
     ]
   },
   accreditation: 'Akreditasi "A" Unggul BAN-SM & Cambridge International ID248',
   foundedYear: 1995,
   premiereFoundedYear: 2023,
+  npsn: {
+    sma: '70043757',
+    smp: '70044693',
+    cambridgeCentre: 'ID248'
+  },
+  socialMedia: {
+    instagram: '@pribadipremiereschool',
+    instagramUrl: 'https://instagram.com/pribadipremiereschool',
+    youtube: '@sekolahpribadidepok',
+    youtubeUrl: 'https://youtube.com/@sekolahpribadidepok',
+    website: 'https://pribadipremiere.sch.id'
+  },
   locationGdc: {
-    address: 'Jl. Boulevard Grand Depok City, Tirtajaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16412',
+    address: 'Jl. Boulevard Grand Depok City, Kel. Tirtajaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16412',
     phone: '+62 812-3233-1995',
     whatsapp: '+62 812-3233-1995',
     contactPerson: 'Ms. Dinda (Admissions Office)',
     secondaryPhone: '+62 812-9290-0095',
     email: 'info.premiere@pribadidepok.sch.id',
     admissionsEmail: 'admission.premiere@pribadidepok.sch.id',
-    operatingHours: 'Monday – Friday: 07:30 – 16:00 WIB, Saturday: 08:30 – 14:00 WIB'
+    adminEmail: 'admin.premiere@pribadidepok.sch.id',
+    operatingHours: 'Senin – Jumat: 07:30 – 16:00 WIB, Sabtu: 08:30 – 14:00 WIB'
   },
   metrics: [
     { value: '100%', label: { en: 'High School Alumni University Entry', id: 'Kelulusan Alumni SMA ke PTN/Global' }, context: 'Graduates accepted to UI, ITB, UGM & top universities' },
@@ -302,56 +317,164 @@ export const facilitiesData: FacilityItem[] = [
 
 export const sampleNewsPosts: NewsPost[] = [
   {
-    id: 'news-1',
-    title: 'Pribadi Students Secure 4 Gold Medals at International Science Olympiad 2026',
-    slug: 'pribadi-students-win-international-science-olympiad-2026',
-    excerpt: 'Demonstrating exceptional analytical rigor, high school delegates from Pribadi Depok clinched gold honors in Physics and Computer Science.',
-    content: `Depok, Jawa Barat — Demonstrating exceptional analytical dedication and rigorous preparation, student representatives from SMA Pribadi Depok achieved remarkable success at the prestigious 2026 International Science and Olympiad Exhibition.
+    id: 'news-akreditasi-a',
+    title: 'Congrats! Sekolah Pribadi Premiere Resmi Terakreditasi "A" dari Badan Akreditasi Nasional',
+    slug: 'sekolah-pribadi-premiere-terakreditasi-a-ban-sm',
+    excerpt: 'Pribadi Premiere School resmi mengantongi predikat Akreditasi "A" (Unggul) dari BAN-SM untuk jenjang SMP dan SMA, mengukuhkan standar mutu pembelajaran internasional.',
+    content: `Grand Depok City, Sukmajaya — Sekolah Pribadi Premiere secara resmi memperoleh predikat Akreditasi "A" (Unggul) dari Badan Akreditasi Nasional (BAN-SM) untuk jenjang Sekolah Menengah Pertama (SMP) dan Sekolah Menengah Atas (SMA).
 
-Representing Indonesia in the competitive Physics and Advanced Computing divisions, the team solved complex multi-stage experimental problems and defended algorithmic research before international jurists.
+Pencapaian bergengsi ini menjadi bukti komitmen berkelanjutan seluruh civitas akademika Pribadi Premiere School di bawah naungan Yayasan Yenbu Indonesia dalam menghadirkan ekosistem pendidikan berstandar tinggi. Asesmen akreditasi mencakup evaluasi menyeluruh terhadap delapan Standar Nasional Pendidikan, termasuk implementasi Kurikulum Merdeka yang diperkaya standar Cambridge International (Centre ID248), kualifikasi tenaga pendidik, kelengkapan sarana prasarana modern seluas 4.000 m², serta pembinaan karakter siswa yang berintegritas.
 
-"This milestone reflects our teachers' unwavering mentorship and the school's continuous investment in state-of-the-art laboratory facilities," said the Head of Academic Development. "We remain dedicated to fostering curious, disciplined thinkers capable of making positive contributions to our global community."`,
-    date: 'October 24, 2026',
-    category: 'Achievements',
-    author: 'Editorial Team',
-    image: '/src/assets/images/school_stem_laboratory_1793156854859.jpg',
+"Pencapaian Akreditasi A ini merupakan buah kerja keras seluruh guru, manajemen, orang tua, dan siswa kami. Hal ini memvalidasi bahwa sistem pembelajaran bilingual, integrasi teknologi Digital Classroom, serta pembinaan akhlak di Pribadi Premiere berada pada standar mutu tertinggi," ungkap Direktur Akademik Pribadi Premiere School.`,
+    date: 'Januari 2026',
+    category: 'Akreditasi',
+    author: 'Tim Humas & Akademik',
+    image: '/src/assets/images/school_campus_exterior_1793156837942.jpg',
     readTime: '3 min read',
     source: 'native'
   },
   {
-    id: 'news-2',
-    title: 'Admissions Open for Academic Year 2026/2027: Early Bird & Scholarships Available',
-    slug: 'admissions-open-academic-year-2026-2027',
-    excerpt: 'Pribadi Bilingual School opens new student intake (PPDB) for Primary, Junior High, and Senior High with academic and talent scholarship options.',
-    content: `Pribadi Bilingual School (Sekolah Pribadi Depok) is pleased to announce the official opening of Enrollment for the Academic Year 2026/2027 across all education levels: SD Pribadi, SMP Pribadi, and SMA Pribadi.
+    id: 'news-digital-classroom',
+    title: 'Digital Classroom: Transformasi Pembelajaran Modern Berbasis 1:1 Chromebook',
+    slug: 'digital-classroom-inovasi-chromebook-pribadi-premiere',
+    excerpt: 'Melihat lebih dekat bagaimana Pribadi Premiere School memanfaatkan perangkat Chromebook dan Google Workspace for Education dalam keseharian belajar siswa.',
+    content: `Teknologi telah menjadi katalis utama dalam mentransformasi cara siswa mengeksplorasi ilmu pengetahuan. Di Pribadi Premiere School, inovasi Digital Classroom dihadirkan dengan membekali setiap peserta didik dengan perangkat Chromebook pribadi yang terhubung dengan infrastruktur jaringan berkecepatan tinggi di seluruh area kampus Grand Depok City.
 
-Prospective students can take advantage of our Early Bird registration waiver, as well as dedicated scholarship tracks including:
-1. Academic Excellence Track (based on report cards and entrance test scores)
-2. Science & Math Olympiad Track (for medalists of district/provincial/national OSN)
-3. Tahfidz & Quranic Memorization Scholarship
-4. Arts & Sports Talent Pathway
+Buku cetak konvensional kini diperkaya dengan modul digital interaktif, simulasi sains laboratorium virtual, dan platform kolaborasi real-time Google Classroom. Guru bertindak sebagai fasilitator yang memandu siswa menganalisis data, memprogram kode logika, dan menyusun presentasi multimedia.
 
-Campus tours and consultations with our curriculum specialists are conducted every Saturday from 08:30 to 14:00 WIB.`,
-    date: 'October 15, 2026',
-    category: 'Admissions',
-    author: 'Admissions Office',
+Sistem ini didukung dengan manajemen perangkat Google Workspace for Education yang aman, menyaring konten edukatif, serta melatih kedisiplinan digital sejak jenjang dasar hingga menengah atas.`,
+    date: 'Februari 2026',
+    category: 'Teknologi & Kurikulum',
+    author: 'Koordinator Edutech',
+    image: '/src/assets/images/school_stem_laboratory_1793156854859.jpg',
+    readTime: '4 min read',
+    source: 'native'
+  },
+  {
+    id: 'news-pribadi-membaca',
+    title: 'Pribadi Membaca: Menumbuhkan Budaya Literasi & Wawasan Kritis Siswa di Era Digital',
+    slug: 'pribadi-membaca-gerakan-literasi-sekolah',
+    excerpt: 'Gerakan literasi "Pribadi Membaca" mendorong siswa mendalami buku bermutu, artikel sains, dan jurnal Cambridge di Learning Commons modern.',
+    content: `Di tengah arus deras informasi digital dan media sosial, kemampuan membaca mendalam (deep reading) dan berpikir kritis menjadi aset berharga bagi generasi masa depan. Program "Pribadi Membaca" merupakan inisiatif literasi unggulan di Pribadi Premiere School yang dirancang untuk membiasakan siswa menikmati buku sebagai jendela dunia.
+
+Setiap pagi sebelum sesi akademik dimulai, siswa meluangkan waktu 15–20 menit untuk membaca buku fiksi, non-fiksi, ensiklopedia sains, maupun sastra pilihan di ruang kelas dan Multimedia Learning Commons sekolah.
+
+Tidak hanya membaca, siswa juga diajak mempresentasikan intisari bacaan mereka dalam sesi book review mingguan, melatih keberanian public speaking, memperkaya kosakata dwibahasa, serta mengasah empati terhadap berbagai perspektif kehidupan.`,
+    date: 'Maret 2026',
+    category: 'Literasi & Karakter',
+    author: 'Tim Pustaka & Bahasa',
+    image: '/src/assets/images/school_library_study_1793156869186.jpg',
+    readTime: '3 min read',
+    source: 'native'
+  },
+  {
+    id: 'news-character-building',
+    title: 'Character Building: Membentuk Generasi Berintegritas & Berakhlak Mulia',
+    slug: 'character-building-generasi-unggul-berintegritas',
+    excerpt: 'Pendidikan karakter di Pribadi Premiere memadukan pembiasaan adab harian, empati sosial, dan kolaborasi aktif bersama orang tua murid.',
+    content: `Sesuai moto sekolah "Leading with Knowledge, Guiding with Values", kecerdasan intelektual siswa di Pribadi Premiere School selalu dipadukan dengan kematangan budi pekerti dan integritas moral.
+
+Program Character Building diterapkan melalui pembiasaan adab sehari-hari: budaya senyum, sapa, santun, disiplin waktu, kebersihan lingkungan, serta kejujuran dalam setiap penugasan akademik. Bimbingan konseling personal (One-on-One Counseling) dan asesmen Getting to Know You (GTKY) membantu memantau perkembangan emosional dan sosial anak.
+
+Sekolah juga menjalin komunikasi yang erat dengan orang tua melalui sesi parenting berkala, memastikan nilai-nilai kebaikan yang diajarkan di sekolah senantiasa selaras dengan lingkungan keluarga di rumah.`,
+    date: 'Februari 2026',
+    category: 'Karakter & Nilai',
+    author: 'Koordinator Karakter & Wellbeing',
     image: '/src/assets/images/school_campus_exterior_1793156837942.jpg',
     readTime: '4 min read',
     source: 'native'
   },
   {
-    id: 'news-3',
-    title: 'Cambridge Checkpoint and IGCSE Examination Results Highlight Academic Consistency',
-    slug: 'cambridge-examination-results-2026',
-    excerpt: 'Over 88% of secondary students achieved distinctions across Cambridge Mathematics, English as a Second Language, and Natural Sciences.',
-    content: `The Cambridge Assessment International Education results for the recent examination cycle have been released, reaffirming Pribadi Bilingual School's track record of consistent academic distinction.
+    id: 'news-pribadi-mengajar',
+    title: 'Pribadi Mengajar: Inspirasi Siswa & Relawan Internasional Berbagi Ilmu Bahasa Inggris',
+    slug: 'pribadi-mengajar-pengabdian-edukasi-siswa',
+    excerpt: 'Program pengabdian masyarakat "Pribadi Mengajar" berkolaborasi dengan relawan native speaker luar negeri untuk memperluas akses bahasa Inggris.',
+    content: `Pribadi Premiere School meyakini bahwa pendidikan sejati melahirkan rasa peduli dan tanggung jawab untuk berbagi dengan sesama. Melalui program unggulan "Pribadi Mengajar", para siswa bersama guru dan relawan penutur asli (native speaker) internasional terjun langsung memberikan pembelajaran bahasa Inggris interaktif kepada siswa-siswi di sekolah sekitar Kota Depok.
 
-Across Grade 8 Checkpoint and Grade 10 IGCSE cohorts, 88.4% of candidate entries secured grades within the top performance bands. Students attributed their confidence to weekly laboratory sessions and collaborative small-group seminars.`,
-    date: 'September 28, 2026',
-    category: 'Academics',
-    author: 'Cambridge Coordinator',
+Kegiatan ini bekerja sama dengan dinas pendidikan setempat dan organisasi pertukaran pemuda global. Para siswa Pribadi Premiere bertindak sebagai fasilitator sebaya, mengajarkan storytelling, lagu dwibahasa, serta permainan edukatif yang menyenangkan.
+
+Program ini tidak hanya meningkatkan kemampuan komunikasi bahasa Inggris anak-anak yang didampingi, tetapi juga menanamkan kerendahan hati, rasa syukur, dan jiwa kepemimpinan sosial yang nyata pada diri siswa Pribadi Premiere.`,
+    date: 'Januari 2026',
+    category: 'Pengabdian Masyarakat',
+    author: 'OSIS & Divisi Sosial',
     image: '/src/assets/images/school_library_study_1793156869186.jpg',
-    readTime: '2 min read',
+    readTime: '4 min read',
+    source: 'native'
+  },
+  {
+    id: 'news-pribadi-berbagi',
+    title: 'Pribadi Berbagi: Aksi Nyata Kepedulian Sosial & Donasi Kemanusiaan Siswa Premiere',
+    slug: 'pribadi-berbagi-baksos-donasi-peduli-sesama',
+    excerpt: 'OSIS Pribadi Premiere bersama paguyuban orang tua menggelar bakti sosial, santunan panti asuhan, dan bantuan sarana pendidikan.',
+    content: `Sebagai wujud implementasi misi sekolah dalam menumbuhkan rasa cinta kasih kepada sesama dan bangsa, keluarga besar Sekolah Pribadi Premiere secara berkala menyelenggarakan agenda "Pribadi Berbagi".
+
+Dalam kegiatan terbaru, pengurus OSIS bersama komite orang tua menggalang paket bantuan sembako, buku bacaan berkualitas, dan perlengkapan sekolah untuk anak-anak di beberapa panti asuhan dan komunitas prasejahtera di wilayah Sukmajaya dan sekitarnya.
+
+Penyerahan donasi diiringi dengan sesi bermain bersama, lokakarya kreasi sains sederhana, dan buka puasa / makan siang bersama, mempererat ikatan persaudaraan dan menumbuhkan rasa empati kemanusiaan yang mendalam di kalangan siswa.`,
+    date: 'Desember 2025',
+    category: 'Kepedulian Sosial',
+    author: 'OSIS Pribadi Premiere',
+    image: '/src/assets/images/school_arts_sports_1793156884514.jpg',
+    readTime: '3 min read',
+    source: 'native'
+  },
+  {
+    id: 'news-career-counseling',
+    title: 'Career & College Counseling: Menembus PTN Unggulan dan Kampus Kelas Dunia',
+    slug: 'career-college-counseling-sukses-ptn-dan-luar-negeri',
+    excerpt: 'Layanan bimbingan karir personal, seminar alumni, dan pendampingan portofolio mengantarkan 100% lulusan SMA menuju perguruan tinggi impian.',
+    content: `Memasuki jenjang Sekolah Menengah Atas, siswa Pribadi Premiere mendapatkan pendampingan terstruktur melalui program Career & College Counseling. Konselor karir profesional sekolah bekerja secara personal memetakan minat, bakat, serta profil akademik setiap siswa sejak kelas 10.
+
+Program ini mencakup:
+1. Asesmen Minat Bakat & Kepribadian (GTKY Assessment)
+2. Seminar dan Workshop Persiapan Masuk Perguruan Tinggi Negeri (SNBP & SNBT UTBK)
+3. Bimbingan Penulisan Personal Statement dan Aplikasi Beasiswa Luar Negeri
+4. Sesi Alumni Sharing: Berbagi pengalaman langsung dari kakak kelas yang telah diterima di UI, ITB, UGM, NUS, NTU, hingga universitas di Inggris dan Australia.
+
+Dengan rekam jejak bimbingan intensif ini, lulusan Pribadi Premiere berhasil meraih kursi di program studi favorit seperti Kedokteran, Teknik Informatika, Bisnis, dan Hubungan Internasional.`,
+    date: 'November 2025',
+    category: 'Alumni & Karir',
+    author: 'Departemen Bimbingan Karir',
+    image: '/src/assets/images/school_campus_exterior_1793156837942.jpg',
+    readTime: '4 min read',
+    source: 'native'
+  },
+  {
+    id: 'news-osn-achievements',
+    title: 'Pribadi Students Secure 4 Gold Medals at International Science & Robotics Olympiad',
+    slug: 'pribadi-students-win-international-science-olympiad-2026',
+    excerpt: 'Delegasi siswa SMA dan SMP Pribadi meraih medali emas pada cabang Fisika, Informatika Coding, dan Robotika Lingkungan.',
+    content: `Depok, Jawa Barat — Menunjukkan ketajaman analisis dan dedikasi riset yang gigih, delegasi siswa dari Pribadi Premiere School sukses menorehkan prestasi gemilang pada ajang Olimpiade Sains dan Robotika Internasional 2026.
+
+Mewakili Indonesia pada divisi Fisika Komputasi dan Robotika Otonom, tim siswa mempresentasikan inovasi prototipe cerdas dan mempertahankan karya riset ilmiah mereka di hadapan dewan juri internasional.
+
+"Prestasi ini merefleksikan pembinaan intensif berkelanjutan di klinik olimpiade sains serta dukungan laboratorium STEM sekolah yang representatif. Kami bangga atas ketangguhan mental dan integritas siswa kami," ujar Pembina Tim Olimpiade Sains Pribadi.`,
+    date: 'Oktober 2026',
+    category: 'Prestasi & Olimpiade',
+    author: 'Tim Olimpiade Sains',
+    image: '/src/assets/images/school_stem_laboratory_1793156854859.jpg',
+    readTime: '3 min read',
+    source: 'native'
+  },
+  {
+    id: 'news-ppdb-admissions',
+    title: 'Penerimaan Peserta Didik Baru (PPDB 2026/2027): Early Bird & Jalur Beasiswa Terbuka',
+    slug: 'penerimaan-peserta-didik-baru-ppdb-2026-2027',
+    excerpt: 'Sekolah Pribadi Premiere membuka pendaftaran siswa baru untuk jenjang TK, SD, SMP, dan SMA dengan kuota beasiswa prestasi s.d. 100%.',
+    content: `Sekolah Pribadi Premiere Grand Depok City mengumumkan pembukaan pendaftaran Peserta Didik Baru (PPDB) untuk Tahun Ajaran 2026/2027 bagi seluruh jenjang: TK Pribadi Premiere, SD Pribadi Premiere, SMP Pribadi Premiere, dan SMA Pribadi Premiere.
+
+Orang tua dapat memanfaatkan potongan biaya khusus Early Bird serta berbagai pilihan jalur beasiswa:
+1. Jalur Prestasi Akademik (berdasarkan nilai rapor dan tes diagnostik)
+2. Jalur Prestasi Olimpiade Sains (OSN, FLS2N, O2SN, medalis kompetisi sains/matematika)
+3. Jalur Beasiswa Tahfidz Al-Qur'an
+4. Jalur Prestasi Bakat Seni, Robotika & Olahraga
+
+Keluarga calon siswa dapat menghadiri sesi Tur Kampus Sabtu (Saturday Campus Tour) setiap akhir pekan pukul 08:30 – 14:00 WIB untuk berkonsultasi langsung dengan kepala sekolah dan konselor PPDB.`,
+    date: 'Oktober 2026',
+    category: 'PPDB & Beasiswa',
+    author: 'Panitia PPDB 2026/2027',
+    image: '/src/assets/images/school_campus_exterior_1793156837942.jpg',
+    readTime: '4 min read',
     source: 'native'
   }
 ];
@@ -659,13 +782,16 @@ export const boardingSchedule: BoardingScheduleItem[] = [
 ];
 
 export const studentClubs = [
-  { name: { en: 'Robotics & AI Lab', id: 'Robotika & Kecerdasan Buatan' }, category: 'STEM', icon: '🤖' },
-  { name: { en: 'Science Olympiad (OSN Club)', id: 'Klub Olimpiade Sains (OSN)' }, category: 'Academic', icon: '🔬' },
-  { name: { en: 'Model United Nations & Debate', id: 'Debat Bahasa Inggris & MUN' }, category: 'Leadership', icon: '🎙️' },
-  { name: { en: 'Archery & Martial Arts', id: 'Panahan & Bela Diri' }, category: 'Sports', icon: '🏹' },
-  { name: { en: 'Swimming & Water Polo', id: 'Renang & Polo Air' }, category: 'Sports', icon: '🏊' },
-  { name: { en: 'Orchestra & Traditional Music', id: 'Ansambel Musik & Seni Tradisional' }, category: 'Arts', icon: '🎻' },
-  { name: { en: 'Coding & Web Development', id: 'Pemrograman & Pembuatan Game' }, category: 'STEM', icon: '💻' },
-  { name: { en: 'Tahfidz & Islamic Studies', id: 'Tahfidz Al-Qur\'an & Studi Islam' }, category: 'Character', icon: '📖' }
+  { name: { en: 'AI & Robotics Innovation Club', id: 'Klub Robotika & Kecerdasan Buatan (AI)' }, category: 'STEM', icon: '🤖' },
+  { name: { en: 'Science Olympiad (OSN Research Club)', id: 'Klinik Olimpiade Sains Nasional (OSN)' }, category: 'Academic', icon: '🔬' },
+  { name: { en: 'Public Speaking, Poetry & MUN Debate', id: 'Public Speaking, Seni Baca Puisi & Debat MUN' }, category: 'Leadership', icon: '🎙️' },
+  { name: { en: 'Pribadi Membaca Literacy & Journalism', id: 'Komunitas Literasi & Jurnalistik Pribadi Membaca' }, category: 'Arts', icon: '📚' },
+  { name: { en: 'Pribadi Mengajar Community Service', id: 'Program Pengabdian Edukasi Pribadi Mengajar' }, category: 'Character', icon: '🤝' },
+  { name: { en: 'Pribadi Berbagi Social Outreach', id: 'Aksi Sosial & Kemanusiaan Pribadi Berbagi' }, category: 'Character', icon: '❤️' },
+  { name: { en: 'Coding & Web Application Dev', id: 'Pemrograman Web & Python Coding' }, category: 'STEM', icon: '💻' },
+  { name: { en: 'Traditional Archery & Martial Arts', id: 'Panahan Tradisional & Bela Diri' }, category: 'Sports', icon: '🏹' },
+  { name: { en: 'Swimming & Aquatic Training', id: 'Renang & Latihan Akuatik Semi-Olimpiade' }, category: 'Sports', icon: '🏊' },
+  { name: { en: 'Orchestra, Choir & Acoustic Ensemble', id: 'Paduan Suara, Musik Akustik & Ansambel' }, category: 'Arts', icon: '🎻' },
+  { name: { en: 'Tahfidz Al-Qur\'an & Character Habituation', id: 'Tahfidz Al-Qur\'an & Pembinaan Adab' }, category: 'Character', icon: '📖' }
 ];
 

@@ -16,15 +16,21 @@ export const NewsEventsSection: React.FC<NewsEventsSectionProps> = ({
   const [readingPost, setReadingPost] = useState<NewsPost | null>(null);
 
   const categories = [
-    { id: 'all', label: { en: 'All Bulletins', id: 'Semua Berita' } },
-    { id: 'Achievements', label: { en: 'Achievements & Olympiads', id: 'Prestasi & Olimpiade' } },
-    { id: 'Admissions', label: { en: 'Admissions & PPDB', id: 'PPDB 2026/2027' } },
-    { id: 'Academics', label: { en: 'Cambridge & Academics', id: 'Kurikulum & Riset' } }
+    { id: 'all', label: { en: 'All Articles', id: 'Semua Berita' } },
+    { id: 'akreditasi', label: { en: 'Accreditation', id: 'Akreditasi "A"' } },
+    { id: 'teknologi', label: { en: 'Digital Classroom', id: 'Digital Classroom' } },
+    { id: 'karakter', label: { en: 'Character & Community', id: 'Karakter & Pengabdian' } },
+    { id: 'literasi', label: { en: 'Literacy (Pribadi Membaca)', id: 'Literasi' } },
+    { id: 'prestasi', label: { en: 'Olympiads & Placements', id: 'Prestasi & Karir' } },
+    { id: 'ppdb', label: { en: 'PPDB 2026/2027', id: 'PPDB 2026/2027' } }
   ];
 
   const filteredPosts = newsPosts.filter(post => {
     if (activeCategory === 'all') return true;
-    return post.category.toLowerCase().includes(activeCategory.toLowerCase());
+    const cat = post.category.toLowerCase();
+    const title = post.title.toLowerCase();
+    const term = activeCategory.toLowerCase();
+    return cat.includes(term) || title.includes(term);
   });
 
   return (

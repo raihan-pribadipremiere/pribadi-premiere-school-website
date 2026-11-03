@@ -66,8 +66,33 @@ export const Footer: React.FC<FooterProps> = ({
                 Akreditasi "A" Unggul BAN-SM
               </span>
               <span className="px-2.5 py-1 bg-stone-800 border border-stone-700 rounded text-stone-300">
-                SPK Kemendikbud
+                NPSN SMA 70043757 · SMP 70044693
               </span>
+            </div>
+
+            {/* Official Social Media */}
+            <div className="pt-2 flex items-center gap-3 text-xs text-stone-400">
+              <a 
+                href="https://instagram.com/pribadipremiereschool" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 transition-colors flex items-center gap-1.5"
+                title="Instagram Resmi @pribadipremiereschool"
+              >
+                <span>📷</span>
+                <span>@pribadipremiereschool</span>
+              </a>
+              <span className="text-stone-700">·</span>
+              <a 
+                href="https://youtube.com/@sekolahpribadidepok" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 transition-colors flex items-center gap-1.5"
+                title="YouTube Resmi Sekolah Pribadi Depok"
+              >
+                <span>▶️</span>
+                <span>YouTube</span>
+              </a>
             </div>
           </div>
 

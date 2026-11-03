@@ -86,15 +86,23 @@ export const ContactPage: React.FC<ContactPageProps> = ({
                   </div>
                   <div className="flex items-center gap-2.5">
                     <Phone className="w-4 h-4 text-amber-800 shrink-0" />
-                    <span>WhatsApp / Telepon: {schoolProfile.locationGdc.phone} ({schoolProfile.locationGdc.contactPerson})</span>
+                    <span>WhatsApp / Hotline: {schoolProfile.locationGdc.phone} ({schoolProfile.locationGdc.contactPerson})</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <Phone className="w-4 h-4 text-amber-800 shrink-0" />
-                    <span>Layanan Tambahan: {schoolProfile.locationGdc.secondaryPhone}</span>
+                    <span>Telepon Alternatif: {schoolProfile.locationGdc.secondaryPhone}</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <Mail className="w-4 h-4 text-amber-800 shrink-0" />
-                    <span>{schoolProfile.locationGdc.email}</span>
+                    <span>Email Informasi: {schoolProfile.locationGdc.email}</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Mail className="w-4 h-4 text-amber-800 shrink-0" />
+                    <span>Email PPDB: {schoolProfile.locationGdc.admissionsEmail}</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <Mail className="w-4 h-4 text-amber-800 shrink-0" />
+                    <span>Email Administrasi: {schoolProfile.locationGdc.adminEmail}</span>
                   </div>
                   <div className="flex items-center gap-2.5">
                     <Clock className="w-4 h-4 text-amber-800 shrink-0" />

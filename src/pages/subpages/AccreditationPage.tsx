@@ -76,8 +76,9 @@ export const AccreditationPage: React.FC<AccreditationPageProps> = ({
                 ? 'Awarded the highest accreditation grade by the National Accreditation Board for Schools and Madrasahs (BAN-SM) for curriculum implementation, teacher qualifications, learning infrastructure, and management standards.'
                 : 'Mendapatkan predikat Akreditasi A (Unggul) dari Badan Akreditasi Nasional Sekolah/Madrasah (BAN-SM) yang menjamin kelayakan sarana, kualifikasi pendidik, dan proses belajar mengajar.'}
             </p>
-            <div className="p-3 bg-stone-50 rounded-xl text-xs text-stone-700 font-mono">
-              Status: Terakreditasi A (Unggul) · SK BAN-SM Terverifikasi
+            <div className="p-3 bg-stone-50 rounded-xl text-xs text-stone-700 font-mono space-y-1">
+              <div>Status: Terakreditasi A (Unggul) · BAN-SM Resmi</div>
+              <div className="text-[11px] text-amber-900 font-semibold">SMA Pribadi Premiere (NPSN: 70043757) · SMP Pribadi Premiere (NPSN: 70044693)</div>
             </div>
           </div>
 
@@ -116,11 +117,11 @@ export const AccreditationPage: React.FC<AccreditationPageProps> = ({
             </li>
             <li className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>Badan Hukum Resmi Penyelenggara: Yayasan Yenbu Indonesia (Kemenkumham RI)</span>
+              <span>Badan Hukum Resmi Penyelenggara: Yayasan Yenbu Indonesia (Kemenkumham RI, Didirikan 1995)</span>
             </li>
             <li className="flex items-center gap-2.5">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>Nomor Pokok Sekolah Nasional (NPSN) Resmi Terdaftar di Dapodik Kemendikbudristek</span>
+              <span>Nomor Pokok Sekolah Nasional: SMA (NPSN 70043757) & SMP (NPSN 70044693) terverifikasi di Kemendikdasmen RI</span>
             </li>
           </ul>
         </div>
