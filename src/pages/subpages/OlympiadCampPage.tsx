@@ -102,6 +102,33 @@ export const OlympiadCampPage: React.FC<OlympiadCampPageProps> = ({
           </div>
         </div>
 
+        {/* STEM Week & Olympiad Festival Showcase */}
+        <div className="bg-linear-to-r from-stone-900 via-stone-850 to-amber-950 text-white rounded-3xl p-8 border border-amber-900/50 shadow-md">
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="w-full md:w-1/3 bg-white p-4 rounded-2xl flex items-center justify-center shadow-inner">
+              <img 
+                src="/assets/aistudio/LOGO_STEM_WEEK___PREMIERE_7ec430c1.png" 
+                alt="STEM Week & Premiere Official Logo" 
+                className="max-h-36 w-auto object-contain"
+              />
+            </div>
+            <div className="w-full md:w-2/3 space-y-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>Annual Premier Science Competition</span>
+              </div>
+              <h3 className="font-serif font-bold text-2xl text-white">
+                {currentLang === 'en' ? 'Pribadi Premiere STEM Week & Science Festival' : 'STEM Week & Festival Sains Pribadi Premiere'}
+              </h3>
+              <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                {currentLang === 'en'
+                  ? 'An annual flagship festival uniting young researchers across Indonesia. Features live robotics challenges, science fair research exhibits, coding hackathons, and intensive Olympiad problem-solving clinics coached by international medalists.'
+                  : 'Ajang festival riset dan sains tahunan yang mempertemukan talenta muda se-Indonesia. Menghadirkan kompetisi robotika, pameran inovasi ilmiah siswa, hackathon coding, serta klinik bedah soal olimpiade bersama mentor medalis internasional.'}
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Callout */}
         <div className="bg-white rounded-3xl p-8 border border-stone-200 shadow-sm">
           <h3 className="font-serif font-bold text-stone-900 text-xl mb-4">

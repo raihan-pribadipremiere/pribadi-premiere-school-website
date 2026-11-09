@@ -124,6 +124,28 @@ export const AccreditationPage: React.FC<AccreditationPageProps> = ({
               <span>Nomor Pokok Sekolah Nasional: SMA (NPSN 70043757) & SMP (NPSN 70044693) terverifikasi di Kemendikdasmen RI</span>
             </li>
           </ul>
+
+          <div className="mt-8 pt-6 border-t border-stone-200 flex flex-wrap items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <img 
+                src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+                alt="Pribadi Premiere Crest" 
+                className="h-12 w-auto object-contain"
+              />
+              <div>
+                <div className="text-xs font-bold text-stone-900">Pribadi Premiere School</div>
+                <div className="text-[11px] text-stone-500">Grand Depok City · Yayasan Yenbu Indonesia</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <span className="text-[10px] font-semibold uppercase text-stone-400">Academic Network:</span>
+              <img 
+                src="/assets/aistudio/LOGO_PREMIERE_EDUVERSAL_8eaef59e.png" 
+                alt="Eduversal Indonesia" 
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

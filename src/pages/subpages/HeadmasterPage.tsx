@@ -58,8 +58,21 @@ export const HeadmasterPage: React.FC<HeadmasterPageProps> = ({
       {/* Letter */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white p-8 sm:p-12 rounded-3xl border border-stone-200 shadow-sm relative">
-          <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center mb-6">
-            <Quote className="w-6 h-6" />
+          <div className="flex items-center justify-between pb-6 mb-6 border-b border-stone-100">
+            <div className="flex items-center gap-4">
+              <img 
+                src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+                alt="Pribadi Premiere Crest" 
+                className="h-14 w-auto object-contain"
+              />
+              <div>
+                <h3 className="font-serif font-bold text-stone-900 text-base">PRIBADI PREMIERE SCHOOL</h3>
+                <p className="text-xs text-stone-500">Grand Depok City · Office of the Head of School</p>
+              </div>
+            </div>
+            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center shrink-0">
+              <Quote className="w-5 h-5 text-amber-800" />
+            </div>
           </div>
 
           <div className="prose prose-stone max-w-none text-xs sm:text-sm text-stone-700 leading-relaxed space-y-4">

@@ -57,16 +57,41 @@ export const FoundationPage: React.FC<FoundationPageProps> = ({
         </div>
       </section>
 
-      {/* Story */}
+      {/* Story & Institutional Partnership */}
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
-        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-sm leading-relaxed text-xs sm:text-sm text-stone-700 space-y-4">
-          <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-900 mb-4">
-            {currentLang === 'en' ? 'The Vision of Yayasan Yenbu Indonesia' : 'Sejarah & Komitmen Yayasan'}
+        <div className="bg-white p-8 sm:p-10 rounded-3xl border border-stone-200 shadow-sm leading-relaxed text-xs sm:text-sm text-stone-700 space-y-6">
+          <div className="flex flex-wrap items-center justify-between gap-6 pb-6 border-b border-stone-200">
+            <div className="flex items-center gap-4">
+              <img 
+                src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+                alt="Pribadi Premiere School Crest" 
+                className="h-16 w-auto object-contain"
+              />
+              <div>
+                <h3 className="font-serif font-bold text-stone-900 text-lg">Yayasan Yenbu Indonesia</h3>
+                <p className="text-xs text-stone-500">Pribadi Premiere School · Grand Depok City Campus</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3 bg-stone-50 px-4 py-3 rounded-2xl border border-stone-200/80">
+              <div className="text-right">
+                <span className="block text-[10px] font-semibold uppercase tracking-wider text-stone-400">Strategic Partner</span>
+                <span className="text-xs font-bold text-stone-800">Eduversal Indonesia</span>
+              </div>
+              <img 
+                src="/assets/aistudio/LOGO_PREMIERE_EDUVERSAL_8eaef59e.png" 
+                alt="Eduversal & Pribadi Premiere Strategic Academic Alliance" 
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+          </div>
+
+          <h2 className="text-xl sm:text-2xl font-serif font-bold text-stone-900">
+            {currentLang === 'en' ? 'The Vision of Yayasan Yenbu Indonesia & Eduversal Partnership' : 'Sejarah, Komitmen Yayasan & Kemitraan Eduversal'}
           </h2>
           <p>
             {currentLang === 'en'
-              ? 'Since 1995, Yayasan Yenbu Indonesia has been a pioneer in bilingual, values-based schooling in Indonesia. Recognizing the accelerating technological demands of the 21st century, the Foundation developed the purpose-built Pribadi Premiere School in Grand Depok City.'
-              : 'Sejak tahun 1995, Yayasan Yenbu Indonesia memelopori model sekolah dwibahasa berasrama yang terbukti melahirkan ratusan medalis olimpiade sains dan pemimpin di berbagai bidang. Menjawab tantangan abad ke-21, Yayasan menghadirkan Pribadi Premiere School di Grand Depok City.'}
+              ? 'Since 1995, Yayasan Yenbu Indonesia has been a pioneer in bilingual, values-based schooling in Indonesia. In strategic synergy with Eduversal Indonesia, known nationally for prestigious science olympiads, research incubation, and teacher professional development, the Foundation developed the purpose-built Pribadi Premiere School in Grand Depok City.'
+              : 'Sejak tahun 1995, Yayasan Yenbu Indonesia memelopori model sekolah dwibahasa berasrama yang terbukti melahirkan ratusan medalis olimpiade sains dan pemimpin di berbagai bidang. Bersama Eduversal Indonesia sebagai mitra strategis pengembangan kurikulum olimpiade dan riset sains, Yayasan menghadirkan Pribadi Premiere School di Grand Depok City.'}
           </p>
           <p>
             {currentLang === 'en'

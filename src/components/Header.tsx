@@ -161,9 +161,11 @@ export const Header: React.FC<HeaderProps> = ({
             onClick={() => handleNavClick('home')}
             className="flex items-center gap-3 group text-left cursor-pointer shrink-0"
           >
-            <div className="w-11 h-11 rounded-xl bg-amber-800 text-amber-50 flex items-center justify-center font-serif text-2xl font-bold shadow-md group-hover:bg-amber-900 group-hover:scale-105 transition-all">
-              P
-            </div>
+            <img 
+              src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+              alt="Logo Resmi Pribadi Premiere School"
+              className="w-11 h-12 sm:w-12 sm:h-13 object-contain group-hover:scale-105 transition-transform shrink-0 drop-shadow-xs" 
+            />
             <div className="leading-tight">
               <span className="block font-serif text-lg sm:text-2xl font-bold tracking-tight text-stone-900">
                 Pribadi Premiere School

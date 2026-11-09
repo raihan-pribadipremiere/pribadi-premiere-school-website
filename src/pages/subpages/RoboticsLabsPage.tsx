@@ -103,7 +103,33 @@ export const RoboticsLabsPage: React.FC<RoboticsLabsPageProps> = ({
           </div>
         </div>
 
-        <div className="mt-12 text-center">
+        {/* STEM Innovation Showcase */}
+        <div className="mt-10 bg-white p-6 sm:p-8 rounded-3xl border border-stone-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+          <div className="w-full md:w-1/4 bg-stone-50 p-4 rounded-2xl flex items-center justify-center border border-stone-100">
+            <img 
+              src="/assets/aistudio/LOGO_STEM_WEEK___PREMIERE_7ec430c1.png" 
+              alt="STEM Week & Premiere" 
+              className="max-h-28 w-auto object-contain"
+            />
+          </div>
+          <div className="w-full md:w-3/4 space-y-2">
+            <div className="flex items-center gap-2">
+              <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-amber-100 text-amber-900">
+                Pribadi Premiere Innovation Lab
+              </span>
+            </div>
+            <h3 className="font-serif font-bold text-lg text-stone-900">
+              {currentLang === 'en' ? 'STEAM Project-Based Learning & Maker Space' : 'Pembelajaran STEAM Berbasis Proyek & Kreasi Robotika'}
+            </h3>
+            <p className="text-xs text-stone-600 leading-relaxed">
+              {currentLang === 'en'
+                ? 'From elementary grade prototyping to high school AI robotics, our labs host weekly hands-on challenges and preparation for the annual Premiere STEM Week championships.'
+                : 'Mulai dari prototipe sains siswa SD hingga robotika AI tingkat SMA, laboratorium kami menjadi wadah eksperimen mingguan sekaligus persiapan kejuaraan tahunan Premiere STEM Week.'}
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 text-center">
           <button
             onClick={onOpenTourModal}
             className="px-6 py-3 bg-amber-800 hover:bg-amber-900 text-white font-bold rounded-xl text-xs sm:text-sm cursor-pointer shadow-sm"

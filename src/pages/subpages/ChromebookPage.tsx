@@ -111,6 +111,33 @@ export const ChromebookPage: React.FC<ChromebookPageProps> = ({
             </p>
           </div>
         </div>
+
+        {/* Google for Education & STEAM Ecosystem */}
+        <div className="mt-12 bg-white rounded-3xl p-6 sm:p-8 border border-stone-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="space-y-2 max-w-xl">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-semibold">
+              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Certified Google for Education Partner Environment</span>
+            </div>
+            <h3 className="font-serif font-bold text-stone-900 text-xl">
+              {currentLang === 'en' ? 'Pribadi Premiere Managed Device Program' : 'Standar Resmi Google Workspace & STEAM Pribadi Premiere'}
+            </h3>
+            <p className="text-xs text-stone-600 leading-relaxed">
+              {currentLang === 'en'
+                ? 'Student devices are enrolled in Google Workspace for Education domain policies with single-sign-on (SSO), secure cloud backup, and automatic software updates.'
+                : 'Setiap unit dikonfigurasi melalui manajemen domain sekolah resmi, dilengkapi proteksi privasi siswa, penyimpanan cloud tanpa batas untuk tugas sekolah, dan dukungan teknisi IT siap siaga.'}
+            </p>
+          </div>
+          <div className="flex flex-col items-center bg-stone-50 p-4 rounded-2xl border border-stone-100">
+            <img 
+              src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+              alt="Pribadi Premiere School Crest" 
+              className="h-14 w-auto object-contain mb-2"
+            />
+            <span className="text-[11px] font-bold text-stone-800">Grand Depok City</span>
+            <span className="text-[10px] text-stone-500">Google Workspace Enabled</span>
+          </div>
+        </div>
       </section>
 
       {/* Bottom CTA */}

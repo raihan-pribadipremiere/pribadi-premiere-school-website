@@ -8,37 +8,32 @@ interface WhatsAppConciergeProps {
 
 export const WhatsAppConcierge: React.FC<WhatsAppConciergeProps> = ({ currentLang }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedCampus, setSelectedCampus] = useState<'premiere' | 'margonda'>('premiere');
   const [customMessage, setCustomMessage] = useState('');
 
-  const phoneNumbers = {
-    premiere: '6281198772200',
-    margonda: '6281288997722'
-  };
+  const premierePhoneNumber = '6281198772200';
 
   const quickQuestions = [
     {
       label: { en: 'Inquire about PPDB 2026/2027', id: 'Informasi Pendaftaran PPDB 2026/2027' },
-      text: 'Halo Admin Pribadi School, saya ingin menanyakan informasi pendaftaran siswa baru (PPDB) Tahun Ajaran 2026/2027.'
+      text: 'Halo Admin Pribadi Premiere School, saya ingin menanyakan informasi pendaftaran siswa baru (PPDB) Tahun Ajaran 2026/2027.'
     },
     {
       label: { en: 'Science Olympiad Scholarship', id: 'Info Beasiswa Sains & OSN' },
-      text: 'Halo Admin, saya ingin berkonsultasi mengenai jalur Beasiswa Olimpiade Sains & Prestasi.'
+      text: 'Halo Admin Pribadi Premiere School, saya ingin berkonsultasi mengenai jalur Beasiswa Olimpiade Sains & Prestasi.'
     },
     {
-      label: { en: 'Tuition Fees & Boarding Cost', id: 'Rincian Biaya & Asrama' },
-      text: 'Halo Admin, mohon informasi rincian biaya uang pangkal, SPP bulanan, dan fasilitas asrama.'
+      label: { en: 'Tuition Fees & Boarding Cost', id: 'Rincian Biaya & Asrama GDC' },
+      text: 'Halo Admin Pribadi Premiere School, mohon informasi rincian biaya uang pangkal, SPP bulanan, dan fasilitas asrama Grand Depok City.'
     },
     {
       label: { en: 'Book Saturday Campus Tour', id: 'Jadwalkan Tur Kampus Hari Sabtu' },
-      text: 'Halo Admin, saya ingin menjadwalkan kunjungan langsung ke kampus untuk melihat fasilitas.'
+      text: 'Halo Admin Pribadi Premiere School, saya ingin menjadwalkan kunjungan langsung ke kampus Grand Depok City.'
     }
   ];
 
   const handleSend = (text: string) => {
-    const phone = phoneNumbers[selectedCampus];
-    const encoded = encodeURIComponent(text || 'Halo Admin Pribadi School, saya ingin berkonsultasi mengenai pendaftaran siswa.');
-    window.open(`https://wa.me/${phone}?text=${encoded}`, '_blank');
+    const encoded = encodeURIComponent(text || 'Halo Admin Pribadi Premiere School, saya ingin berkonsultasi mengenai pendaftaran siswa.');
+    window.open(`https://wa.me/${premierePhoneNumber}?text=${encoded}`, '_blank');
     setIsOpen(false);
   };
 
@@ -51,45 +46,27 @@ export const WhatsAppConcierge: React.FC<WhatsAppConciergeProps> = ({ currentLan
           {/* Header */}
           <div className="bg-emerald-800 text-white p-4">
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center font-bold">
-                  P
-                </div>
+              <div className="flex items-center gap-2.5">
+                <img 
+                  src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+                  alt="Pribadi Premiere Crest" 
+                  className="w-9 h-9 object-contain rounded-lg bg-white p-0.5 shadow-xs shrink-0" 
+                />
                 <div>
                   <h4 className="font-semibold text-xs sm:text-sm">
-                    {currentLang === 'en' ? 'Pribadi Admissions Concierge' : 'Layanan Konsultasi PPDB'}
+                    {currentLang === 'en' ? 'Pribadi Premiere Admissions' : 'Layanan Konsultasi PPDB Premiere'}
                   </h4>
                   <p className="text-[11px] text-emerald-100 flex items-center gap-1">
                     <span className="w-2 h-2 rounded-full bg-emerald-400"></span>
-                    <span>{currentLang === 'en' ? 'Admissions Team Online' : 'Tim Admisi Aktif'}</span>
+                    <span>Grand Depok City · Official Support</span>
                   </p>
                 </div>
               </div>
               <button 
                 onClick={() => setIsOpen(false)}
-                className="text-emerald-100 hover:text-white p-1 rounded-lg hover:bg-emerald-700/50"
+                className="text-emerald-100 hover:text-white p-1 rounded-lg hover:bg-emerald-700/50 cursor-pointer"
               >
                 <X className="w-4 h-4" />
-              </button>
-            </div>
-
-            {/* Campus Selector */}
-            <div className="mt-3 flex gap-1.5 p-1 bg-emerald-950/40 rounded-lg text-[11px] font-medium">
-              <button
-                onClick={() => setSelectedCampus('premiere')}
-                className={`flex-1 py-1 px-2 rounded transition-colors ${
-                  selectedCampus === 'premiere' ? 'bg-white text-emerald-950 font-bold' : 'text-emerald-100 hover:text-white'
-                }`}
-              >
-                GDC Premiere
-              </button>
-              <button
-                onClick={() => setSelectedCampus('margonda')}
-                className={`flex-1 py-1 px-2 rounded transition-colors ${
-                  selectedCampus === 'margonda' ? 'bg-white text-emerald-950 font-bold' : 'text-emerald-100 hover:text-white'
-                }`}
-              >
-                Margonda Raya
               </button>
             </div>
           </div>

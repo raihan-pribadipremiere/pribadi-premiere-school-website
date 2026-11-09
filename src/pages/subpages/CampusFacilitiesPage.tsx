@@ -104,17 +104,19 @@ export const CampusFacilitiesPage: React.FC<CampusFacilitiesPageProps> = ({
 
         {/* Location Banner */}
         <div className="mt-12 bg-white rounded-3xl p-8 border border-stone-200 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-start gap-4">
-            <div className="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center shrink-0">
-              <MapPin className="w-6 h-6" />
-            </div>
+          <div className="flex items-center gap-4">
+            <img 
+              src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+              alt="Pribadi Premiere Crest" 
+              className="h-16 w-auto object-contain shrink-0"
+            />
             <div>
               <h3 className="font-serif font-bold text-stone-900 text-lg">
                 Pribadi Premiere School Grand Depok City
               </h3>
               <p className="text-xs text-stone-600 mt-1 max-w-xl">
                 Jl. Boulevard Grand Depok City, Tirtajaya, Kec. Sukmajaya, Kota Depok, Jawa Barat 16412.
-                Kawasan bebas banjir, tenang, dan mudah diakses dari Tol Margonda maupun Stasiun Depok.
+                Kawasan representatif modern, tenang, dan mudah diakses melalui Tol Cijago maupun Stasiun KRL Depok.
               </p>
             </div>
           </div>

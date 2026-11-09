@@ -28,8 +28,8 @@ export const CampusFacilities: React.FC<CampusFacilitiesProps> = ({ currentLang 
           </div>
           <p className="text-stone-600 text-xs sm:text-sm max-w-sm">
             {currentLang === 'en'
-              ? 'Our purpose-built campus in Margonda, Depok offers specialized laboratories, high-tech commons, and safe boarding quarters.'
-              : 'Kampus representatif di Margonda Depok dilengkapi laboratorium modern, sarana olahraga terstandar, dan asrama ramah anak.'}
+              ? 'Our purpose-built campus in Grand Depok City offers specialized laboratories, high-tech commons, and safe boarding quarters.'
+              : 'Kampus representatif di Grand Depok City dilengkapi laboratorium modern, sarana olahraga terstandar, dan asrama ramah anak.'}
           </p>
         </div>
 

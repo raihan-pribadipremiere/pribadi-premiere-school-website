@@ -25,7 +25,12 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="lg:col-span-7 space-y-6">
             
             {/* Editorial kicker */}
-            <div className="flex flex-wrap items-center gap-2 text-xs font-semibold tracking-wider uppercase text-amber-900">
+            <div className="flex flex-wrap items-center gap-2.5 text-xs font-semibold tracking-wider uppercase text-amber-900">
+              <img 
+                src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+                alt="Pribadi Premiere School Crest" 
+                className="w-5 h-6 object-contain inline-block shrink-0 drop-shadow-xs" 
+              />
               <span>Pribadi Premiere School</span>
               <span aria-hidden="true">·</span>
               <span>Cambridge International ID248</span>
@@ -104,20 +109,24 @@ export const Hero: React.FC<HeroProps> = ({
               <div className="aspect-[4/3] sm:aspect-[16/10] lg:aspect-[4/3] w-full overflow-hidden bg-stone-200">
                 <img
                   src="/src/assets/images/school_campus_exterior_1793156837942.jpg"
-                  alt="Sekolah Pribadi Depok Bilingual Campus Grounds"
+                  alt="Sekolah Pribadi Premiere Grand Depok City Campus Grounds"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   referrerPolicy="no-referrer"
                 />
               </div>
 
-              {/* Verified badge strip */}
+              {/* Verified badge strip with official logo */}
               <div className="p-4 bg-white border-t border-stone-100 flex items-center justify-between text-xs">
-                <div className="flex items-center gap-2 text-stone-800 font-medium">
-                  <Award className="w-4 h-4 text-amber-800" />
+                <div className="flex items-center gap-2.5 text-stone-800 font-medium">
+                  <img 
+                    src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+                    alt="Logo Pribadi Premiere" 
+                    className="w-5 h-6 object-contain"
+                  />
                   <span>Akreditasi A Unggul BAN-SM</span>
                 </div>
                 <div className="text-stone-500 font-mono text-[11px]">
-                  Est. 1995 · Depok, West Java
+                  Cambridge ID248 · GDC Depok
                 </div>
               </div>
             </div>
@@ -141,7 +150,7 @@ export const Hero: React.FC<HeroProps> = ({
           <div className="flex items-center gap-2.5">
             <MapPin className="w-4 h-4 text-stone-500 shrink-0" />
             <span className="truncate">
-              <strong className="text-stone-900 font-semibold">{currentLang === 'en' ? 'Location:' : 'Lokasi:'}</strong> GDC Boulevard & Margonda Raya
+              <strong className="text-stone-900 font-semibold">{currentLang === 'en' ? 'Location:' : 'Lokasi:'}</strong> Jl. Boulevard Grand Depok City
             </span>
           </div>
           <div className="flex items-center gap-2.5">

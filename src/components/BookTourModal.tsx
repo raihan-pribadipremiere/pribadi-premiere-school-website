@@ -35,13 +35,20 @@ export const BookTourModal: React.FC<BookTourModalProps> = ({ isOpen, onClose, c
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-center justify-between pb-4 border-b border-stone-100">
-          <div>
-            <h3 className="text-lg font-bold text-stone-900 font-serif">
-              {currentLang === 'en' ? 'Schedule a Campus Visit' : 'Jadwalkan Kunjungan Kampus'}
-            </h3>
-            <p className="text-xs text-stone-500">
-              Sekolah Pribadi Depok · Margonda Raya Campus
-            </p>
+          <div className="flex items-center gap-3">
+            <img 
+              src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+              alt="Logo Pribadi Premiere School"
+              className="w-10 h-11 object-contain shrink-0" 
+            />
+            <div>
+              <h3 className="text-lg font-bold text-stone-900 font-serif">
+                {currentLang === 'en' ? 'Schedule a Campus Visit' : 'Jadwalkan Kunjungan Kampus'}
+              </h3>
+              <p className="text-xs text-stone-500 font-medium">
+                Pribadi Premiere School · Grand Depok City Campus
+              </p>
+            </div>
           </div>
           <button
             onClick={() => {

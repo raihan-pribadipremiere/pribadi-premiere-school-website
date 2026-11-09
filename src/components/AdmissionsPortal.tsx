@@ -340,7 +340,7 @@ export const AdmissionsPortal: React.FC<AdmissionsPortalProps> = ({
                 <p className="text-stone-700 leading-normal">
                   {currentLang === 'en' 
                     ? 'Our admission counselors are available for WhatsApp chat and weekend campus consultations.' 
-                    : 'Tim konselor PPDB Sekolah Pribadi Depok siap melayani konsultasi via WhatsApp atau kunjungan langsung setiap Sabtu.'}
+                    : 'Tim konselor PPDB Pribadi Premiere School siap melayani konsultasi via WhatsApp atau kunjungan langsung setiap Sabtu.'}
                 </p>
                 <button
                   onClick={onOpenBooking}
@@ -365,13 +365,20 @@ export const AdmissionsPortal: React.FC<AdmissionsPortalProps> = ({
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-center justify-between pb-4 border-b border-stone-100">
-              <div>
-                <h3 className="text-lg font-bold text-stone-900 font-serif">
-                  {currentLang === 'en' ? 'Online Student Registration (PPDB 2026)' : 'Formulir Pendaftaran Siswa Baru (PPDB 2026)'}
-                </h3>
-                <p className="text-xs text-stone-500">
-                  Sekolah Pribadi Depok · Cambridge International ID248
-                </p>
+              <div className="flex items-center gap-3">
+                <img 
+                  src="/assets/aistudio/Logo_Sekolah_95441e87.png" 
+                  alt="Logo Pribadi Premiere School"
+                  className="w-10 h-11 object-contain shrink-0" 
+                />
+                <div>
+                  <h3 className="text-lg font-bold text-stone-900 font-serif">
+                    {currentLang === 'en' ? 'Online Student Registration (PPDB 2026)' : 'Formulir Pendaftaran Siswa Baru (PPDB 2026)'}
+                  </h3>
+                  <p className="text-xs text-stone-500 font-medium">
+                    Pribadi Premiere School · Cambridge International ID248
+                  </p>
+                </div>
               </div>
               <button
                 onClick={() => {
@@ -395,7 +402,7 @@ export const AdmissionsPortal: React.FC<AdmissionsPortalProps> = ({
                 <p className="text-xs text-stone-600 max-w-sm mx-auto">
                   {currentLang === 'en'
                     ? 'Our admissions committee has received your details. A WhatsApp confirmation and placement test guide has been dispatched.'
-                    : 'Data ananda telah tersimpan dalam sistem PPDB Sekolah Pribadi Depok. Tim admissions akan menghubungi via WhatsApp dalam 1x24 jam.'}
+                    : 'Data ananda telah tersimpan dalam sistem PPDB Pribadi Premiere School. Tim admissions akan menghubungi via WhatsApp dalam 1x24 jam.'}
                 </p>
 
                 <div className="bg-stone-50 p-4 rounded-xl border border-stone-200 text-xs text-left max-w-sm mx-auto space-y-1.5 font-mono">

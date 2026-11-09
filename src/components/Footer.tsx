@@ -36,9 +36,11 @@ export const Footer: React.FC<FooterProps> = ({
           {/* Brand & Mission (4 cols) */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-amber-700 text-amber-50 flex items-center justify-center font-serif text-xl font-bold">
-                P
-              </div>
+              <img 
+                src="/assets/aistudio/logo_Pribadi_Premiere_4x4_cm_white-transparent_833fb355.png" 
+                alt="Logo Putih Pribadi Premiere School"
+                className="w-11 h-12 object-contain shrink-0 drop-shadow-sm" 
+              />
               <div>
                 <span className="block font-serif text-lg font-bold text-white tracking-tight">
                   Pribadi Premiere School
@@ -202,8 +204,35 @@ export const Footer: React.FC<FooterProps> = ({
 
         </div>
 
+        {/* Institutional Accreditation & Partner Ribbon */}
+        <div className="mt-12 pt-6 border-t border-stone-800/80 flex flex-wrap items-center justify-between gap-6 bg-stone-950/60 p-5 rounded-2xl border border-stone-800">
+          <div className="flex flex-wrap items-center gap-4 sm:gap-6">
+            <span className="text-[11px] font-mono uppercase tracking-wider text-amber-400/90 font-semibold">
+              {currentLang === 'en' ? 'Institutional Network & Affiliations:' : 'Jaringan Afiliasi & Kurikulum:'}
+            </span>
+            <div className="flex items-center gap-4 flex-wrap">
+              <span className="px-3 py-1 bg-stone-900 border border-stone-700/80 rounded-lg text-xs font-semibold text-stone-200">
+                Cambridge Assessment International Education (ID248)
+              </span>
+              <span className="px-3 py-1 bg-stone-900 border border-stone-700/80 rounded-lg text-xs font-semibold text-stone-200">
+                BAN-SM Akreditasi "A" Unggul
+              </span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <div className="bg-white px-3 py-1.5 rounded-lg border border-stone-700 flex items-center">
+              <img 
+                src="/assets/aistudio/Logo___Frame_Konten_Premiere_3acdc19f.png" 
+                alt="STEAM & Google for Education Partner - Pribadi Premiere School"
+                className="h-6 w-auto object-contain" 
+              />
+            </div>
+          </div>
+        </div>
+
         {/* Lower Banner: Copyright Strip */}
-        <div className="mt-12 pt-8 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+        <div className="mt-8 pt-6 border-t border-stone-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
           <div className="text-stone-400 text-center sm:text-left">
             <span>© {new Date().getFullYear()} Pribadi Premiere School. Yayasan Yenbu Indonesia.</span>
           </div>

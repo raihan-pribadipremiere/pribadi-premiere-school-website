@@ -142,9 +142,16 @@ export const KindergartenPage: React.FC<KindergartenPageProps> = ({
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:16px_16px]"></div>
         <div className="max-w-5xl mx-auto relative z-10">
           
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-800/80 border border-amber-600/50 text-amber-200 text-xs font-semibold uppercase tracking-wider mb-4">
-            <Sparkles className="w-3.5 h-3.5 text-amber-300" />
-            <span>{currentLang === 'en' ? 'Early Childhood Education · Ages 2 – 6' : 'Pendidikan Anak Usia Dini · Usia 2 – 6 Tahun'}</span>
+          <div className="flex items-center gap-3 mb-4">
+            <img 
+              src="/assets/aistudio/logo_Pribadi_Premiere_4x4_cm_white-transparent_833fb355.png" 
+              alt="Pribadi Premiere Crest" 
+              className="h-9 w-auto object-contain"
+            />
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-800/80 border border-amber-600/50 text-amber-200 text-xs font-semibold uppercase tracking-wider">
+              <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+              <span>{currentLang === 'en' ? 'Early Childhood Education · Ages 2 – 6' : 'Pendidikan Anak Usia Dini · Usia 2 – 6 Tahun'}</span>
+            </div>
           </div>
 
           <h1 className="text-3xl sm:text-5xl font-serif font-bold text-white tracking-tight mb-4 leading-tight">
